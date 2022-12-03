@@ -1,0 +1,19 @@
+@media (min-width: 900px) {
+    .mx-w-50 {
+      max-width: 50% !important;
+    }
+  }
+
+  .cardShadow{
+    box-shadow: $shadowBackground;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
