@@ -1,15 +1,13 @@
 import React from "react";
+import Navbar from "../components/atom/navbar";
+import homeCard from "../assets/images/spiderman.jpg"
 
 const Home = () => {
     return (
         <div>
-            <nav class="navbar navbar-dark bg-primary">
-                <div className="container">
-                    Home page asdas
-                </div>
-            </nav>
+            <Navbar />
+            <img className="home-coverImage" src={homeCard} alt="Italian Trulli" />
             <div class="container">
-
                 <div class="row">
                     <div class="col">
                         1 of 2
