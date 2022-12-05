@@ -10,7 +10,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 
 const Main = () => {
   return (

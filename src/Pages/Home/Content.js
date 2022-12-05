@@ -1,11 +1,10 @@
 import React from "react";
-import Navbar from "../components/atom/navbar";
-import homeCard from "../assets/images/spiderman.jpg"
+import homeCard from "../../assets/images/spiderman.jpg"
 
-const Home = () => {
+const Content = () => {
+
     return (
-        <div>
-            <Navbar />
+        <>
             <img className="home-coverImage" src={homeCard} alt="Italian Trulli" />
             <div class="container">
                 <div class="row">
@@ -39,13 +38,9 @@ const Home = () => {
                         One of three columns
                     </div>
                 </div>
-
             </div>
-            <div className="footer">
-                <p>Footer</p>
-            </div>
-        </div>
+        </>
     )
 }
 
-export default Home;
+export default Content;
