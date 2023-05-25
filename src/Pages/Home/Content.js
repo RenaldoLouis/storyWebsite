@@ -1,8 +1,39 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import homeCard from "../../assets/images/spiderman.jpg"
+import {collection, addDoc, getDocs} from "firebase/firestore";
+import {db} from '../../firebase';
 
 const Content = () => {
+    const [todo, setTodo] = useState("");
+    const [todos, setTodos] = useState([]);
 
+    const fetchPost = async () => {
+        await getDocs(collection(db, "comments"))
+            .then((querySnapshot) => {
+                const newData = querySnapshot.docs
+                    .map((doc) => ({...doc.data(), id: doc.id}));
+                setTodos(newData);
+                console.log(todos, newData);
+            })
+
+    }
+
+    useEffect(() => {
+        fetchPost();
+    }, [])
+
+    const addTodo = async (e) => {
+        e.preventDefault();
+
+        try {
+            const docRef = await addDoc(collection(db, "comments"), {
+                comment: todo,
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
     return (
         <>
             <img className="home-coverImage" src={homeCard} alt="Italian Trulli" />
@@ -38,6 +69,50 @@ const Content = () => {
                         One of three columns
                     </div>
                 </div>
+            </div>
+
+            <section className="todo-container">
+                <div className="todo">
+                    <h1 className="header">
+                        Todo-App
+                    </h1>
+
+                    <div>
+
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="What do you have to do today?"
+                                onChange={(e) => setTodo(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="btn-container">
+                            <button
+                                type="submit"
+                                className="btn"
+                                onClick={addTodo}
+                            >
+                                Submit
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div className="todo-content">
+                        ...
+                    </div>
+                </div>
+            </section>
+
+            <div className="todo-content">
+                {
+                    todos?.map((todo, i) => (
+                        <p key={i}>
+                            {todo.comment}
+                        </p>
+                    ))
+                }
             </div>
         </>
     )
