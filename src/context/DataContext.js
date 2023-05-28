@@ -5,11 +5,15 @@ import React, {
 } from "react";
 
 export const DataContext = createContext({});
+
 let PWAData;
+
 export const DataContextProvider = (props) => {
 
     const [supportsPWA, setSupportsPWA] = useState(false);
     const [showInstallMessage, setShowInstallMessage] = useState(false);
+    const [replyToId, setReplyToId] = useState(null);
+    const [isComment, setIsComment] = useState(null);
 
     const getPWADisplayMode = () => {
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
@@ -77,7 +81,11 @@ export const DataContextProvider = (props) => {
         PWAData,
         showInstallMessage,
         supportsPWA,
-        downloadApp
+        downloadApp,
+        replyToId,
+        setReplyToId,
+        isComment,
+        setIsComment
     }
 
     return (
