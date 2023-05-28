@@ -70,49 +70,16 @@ const Content = () => {
 
     useEffect(() => {
         if (datas.length > 0) {
-            console.log('datas', datas)
 
-            // const groupedArray = datas.reduce((acc, obj) => {
-            //     const replyToId = obj.replyToId;
-            //     if (replyToId) {
-            //         const existingGroup = acc.find(group => group.replyToId === replyToId);
-            //         if (existingGroup) {
-            //             existingGroup.objects.push(obj);
-            //         } else {
-            //             acc.push({replyToId, objects: [obj]});
-            //         }
-            //     }
-            //     return acc;
-            // }, []);
+            const sortedArray = datas.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-
-
-            // Create a map of objects by their id
-            const idMap = datas.reduce((map, obj) => {
-                map[obj.id] = obj;
-                return map;
-            }, {});
-
-            console.log("idMap", idMap)
-            // Group objects based on their replyToId
-            const groupedArray = datas.reduce((acc, obj) => {
+            const groupedArray = sortedArray.reduce((acc, obj) => {
                 const replyToId = obj.replyToId;
-                if (replyToId) {
-                    console.log("masuk replyToId")
-                    const parentObj = idMap[replyToId];
-                    console.log("parentObj", parentObj)
-                    if (parentObj) {
-                        console.log("parentObj.objects", parentObj.objects)
-                        parentObj.objects = parentObj.objects || [];
-                        console.log("parentObj.objects 2", parentObj.objects)
-                        parentObj.objects.push(obj);
-                    } else {
-                        console.log("obj no matching parent", obj)
-                        acc.push(obj); // Objects with replyToId but no matching parent are added to the groupedArray
-                    }
+                const parentArray = acc.find(arr => arr.some(item => item.id === replyToId));
+                if (parentArray) {
+                    parentArray.push(obj);
                 } else {
-                    console.log("masuk else", obj)
-                    acc.push(obj);
+                    acc.push([obj]);
                 }
                 return acc;
             }, []);
@@ -191,25 +158,27 @@ const Content = () => {
             <div className="todo-content">
                 {
                     viewdatas?.map((data, i) => (
-                        <div
-                            style={{marginLeft: 25 * data.isComment}}>
-                            <p key={i}>
-                                {data.name}
-                            </p>
-                            <p key={i}>
-                                {data.comment}
-                            </p>
-                            <button
-                                className="btn"
-                                type="button"
-                                class="btn btn-primary"
-                                data-toggle="modal"
-                                data-target="#exampleModal"
-                                onClick={() => handleClickReply(data.id, data.isComment)}
-                            >
-                                Reply
-                            </button>
-                        </div>
+                        data.map((data2, i) => (
+                            <div
+                                style={{marginLeft: 25 * data2.isComment}}>
+                                <p key={i}>
+                                    {data2.name}
+                                </p>
+                                <p key={i}>
+                                    {data2.comment}
+                                </p>
+                                <button
+                                    className="btn"
+                                    type="button"
+                                    class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onClick={() => handleClickReply(data2.id, data2.isComment)}
+                                >
+                                    Reply
+                                </button>
+                            </div>
+                        ))
                     ))
                 }
             </div>
