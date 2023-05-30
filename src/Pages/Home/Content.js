@@ -50,23 +50,9 @@ const Content = () => {
 
 
     const handleClickReply = (userId, isCommentNumber) => {
-        console.log("isCommentNumber", isCommentNumber)
         setReplyToId(userId)
         setIsComment(isCommentNumber)
     }
-
-    function groupBy(objectArray, property) {
-        return objectArray.reduce((acc, obj) => {
-            const key = obj[property];
-            const curGroup = acc[key] ?? [];
-
-            return {...acc, [key]: [...curGroup, obj]};
-        }, {});
-    }
-
-
-
-
 
     useEffect(() => {
         if (datas.length > 0) {
@@ -88,13 +74,11 @@ const Content = () => {
         }
     }, [datas])
 
-    console.log("viewdatas", viewdatas)
-
     return (
         <>
             <Modal />
-            <img className="home-coverImage" src={homeCard} alt="Italian Trulli" />
-            <div class="container">
+            <div className="home-coverImage" />
+            <div class="container col-lg-8 col-10 mt-5 mb-5">
                 <div>
                     {data.paragraph1}
                 </div>
