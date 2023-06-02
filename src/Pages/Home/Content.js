@@ -1,29 +1,32 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import homeCard from "../../assets/images/spiderman.jpg"
-import {collection, addDoc, getDocs} from "firebase/firestore";
-import {db} from '../../firebase';
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { db } from '../../firebase';
 import data from "../../data/content.json"
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import Modal from "../../components/molecules/modal";
-import {DataContext} from "../../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 import moment from 'moment'
+import ContentCover from "./ContentCover";
 
 
 
 const Content = () => {
+    const contentRef = useRef(null)
+
     const [name, setName] = useState("");
     const [comment, setComment] = useState("");
     const [datas, setDatas] = useState([]);
     const [viewdatas, setViewDatas] = useState([]);
 
-    const {setIsComment, setReplyToId} = useContext(DataContext)
+    const { setIsComment, setReplyToId } = useContext(DataContext)
 
 
     const fetchPost = async () => {
         await getDocs(collection(db, "comments"))
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs
-                    .map((doc) => ({...doc.data(), id: doc.id}));
+                    .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setDatas(newData);
             })
     }
@@ -54,6 +57,9 @@ const Content = () => {
         setIsComment(isCommentNumber)
     }
 
+    const executeScroll = () => contentRef.current.scrollIntoView()
+
+
     useEffect(() => {
         if (datas.length > 0) {
 
@@ -77,14 +83,14 @@ const Content = () => {
     return (
         <>
             <Modal />
-            <div className="home-coverImage" />
-            <div class="container col-lg-8 col-10 mt-5 mb-5">
+            <ContentCover executeScroll={executeScroll} />
+            <div ref={contentRef} class="container col-lg-8 col-10 pt-5 mb-5">
                 <div>
                     {data.paragraph1}
                 </div>
             </div>
 
-            <video style={{width: "50vw"}} controls width="100%">
+            <video style={{ width: "50vw" }} controls width="100%">
                 <source src="/video1.mp4" type="video/mp4"
                 />
                 Sorry, your browser doesn't support videos.
@@ -105,21 +111,21 @@ const Content = () => {
 
                         <div>
                             <form>
-                                <label style={{display: "grid"}}>
+                                <label style={{ display: "grid" }}>
                                     Enter your name:
                                     <input
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        style={{width: "200px"}}
+                                        style={{ width: "200px" }}
                                     />
                                 </label>
-                                <label style={{display: "grid"}}>
+                                <label style={{ display: "grid" }}>
                                     Enter your Comment:
                                     <textarea
                                         value={comment}
                                         onChange={(e) => setComment(e.target.value)}
-                                        style={{width: "50vw"}}
+                                        style={{ width: "50vw" }}
                                     />
                                 </label>
                             </form>
@@ -144,7 +150,7 @@ const Content = () => {
                     viewdatas?.map((data, i) => (
                         data.map((data2, i) => (
                             <div
-                                style={{marginLeft: 25 * data2.isComment}}>
+                                style={{ marginLeft: 25 * data2.isComment }}>
                                 <p key={i}>
                                     {data2.name}
                                 </p>
