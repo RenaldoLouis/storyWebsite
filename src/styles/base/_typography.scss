@@ -1,7 +1,22 @@
 .font-size-m {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .font-size-s {
-    font-size: 14px;
+  font-size: 14px;
+}
+
+.headerText {
+  font-weight: 600;
+  font-size: 24px;
+  &-footer {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+}
+
+.normalText {
+  font-weight: 400;
+  font-size: 16px;
 }
