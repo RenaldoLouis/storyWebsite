@@ -8,7 +8,9 @@ import Modal from "../../components/molecules/modal";
 import { DataContext } from "../../context/DataContext";
 import moment from 'moment'
 import ContentCover from "./ContentCover";
-
+import CommentSection from "./CommentSection";
+import { BsShareFill } from "react-icons/bs";
+import { MdOutlineComment } from "react-icons/md";
 
 
 const Content = () => {
@@ -18,6 +20,7 @@ const Content = () => {
     const [comment, setComment] = useState("");
     const [datas, setDatas] = useState([]);
     const [viewdatas, setViewDatas] = useState([]);
+    const [isViewComment, setIsViewComment] = useState(false);
 
     const { setIsComment, setReplyToId } = useContext(DataContext)
 
@@ -80,99 +83,66 @@ const Content = () => {
         }
     }, [datas])
 
+    const handleShowComment = () => {
+        setIsViewComment(true);
+    }
+
+    const handleCloseComment = () => {
+        setIsViewComment(false);
+    }
+
     return (
-        <>
+        <div style={{ position: "relative" }}>
+            {isViewComment && (
+                <div className="backdrop" onClick={handleCloseComment} />
+            )}
             <Modal />
             <ContentCover executeScroll={executeScroll} />
             <div ref={contentRef} class="container col-lg-8 col-10 pt-5 mb-5">
                 <div>
                     {data.paragraph1}
                 </div>
-            </div>
 
-            <video style={{ width: "50vw" }} controls width="100%">
-                <source src="/video1.mp4" type="video/mp4"
-                />
-                Sorry, your browser doesn't support videos.
-            </video>
+                <video style={{ width: "50vw" }} controls width="100%">
+                    <source src="/video1.mp4" type="video/mp4"
+                    />
+                    Sorry, your browser doesn't support videos.
+                </video>
 
-            <audio controls>
-                <source src="/audio1.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
-            </audio>
+                <audio controls>
+                    <source src="/audio1.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
 
-            <section className="todo-container">
-                <div className="todo">
-                    <h1 className="header">
-                        Todo-App
-                    </h1>
+                <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
 
-                    <div>
-
-                        <div>
-                            <form>
-                                <label style={{ display: "grid" }}>
-                                    Enter your name:
-                                    <input
-                                        type="text"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        style={{ width: "200px" }}
-                                    />
-                                </label>
-                                <label style={{ display: "grid" }}>
-                                    Enter your Comment:
-                                    <textarea
-                                        value={comment}
-                                        onChange={(e) => setComment(e.target.value)}
-                                        style={{ width: "50vw" }}
-                                    />
-                                </label>
-                            </form>
+                <div style={{ display: "flex" }}>
+                    <button className="commentButtonContainer" onClick={handleShowComment}>
+                        <MdOutlineComment style={{ width: 16, height: 16, marginRight: 8 }} />
+                        Comments
+                        <div style={{ borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35 }}>
+                            {viewdatas.length}
                         </div>
+                    </button>
 
-                        <div className="btn-container">
-                            <button
-                                type="submit"
-                                className="btn"
-                                onClick={handleAddComment}
-                            >
-                                Submit
-                            </button>
-                        </div>
-
-                    </div>
+                    <button className="commentButtonContainer" onClick={executeScroll} style={{ marginLeft: 25 }}>
+                        <BsShareFill style={{ width: 16, height: 16, marginRight: 8 }} />
+                        Share
+                    </button>
                 </div>
-            </section >
+            </div >
 
-            <div className="todo-content">
-                {
-                    viewdatas?.map((data, i) => (
-                        data.map((data2, i) => (
-                            <div
-                                style={{ marginLeft: 25 * data2.isComment }}>
-                                <p key={i}>
-                                    {data2.name}
-                                </p>
-                                <p key={i}>
-                                    {data2.comment}
-                                </p>
-                                <button
-                                    className="btn"
-                                    type="button"
-                                    class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal"
-                                    onClick={() => handleClickReply(data2.id, data2.isComment)}
-                                >
-                                    Reply
-                                </button>
-                            </div>
-                        ))
-                    ))
-                }
-            </div>
-        </>
+            <CommentSection
+                name={name}
+                setName={setName}
+                comment={comment}
+                setComment={setComment}
+                viewdatas={viewdatas}
+                handleAddComment={handleAddComment}
+                handleClickReply={handleClickReply}
+                isViewComment={isViewComment}
+            />
+        </div>
     )
 }
 

@@ -25,18 +25,25 @@
   padding: 8px 16px 8px 16px;
   border: 1px solid #f5f5f5;
   display: flex;
+  margin-top: 36px;
+  align-items: center;
+}
+.commentButtonContainer {
+  border-radius: 100px;
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 8px 16px 8px 16px;
+  border: 1px solid #1e1e1e;
+  display: flex;
   margin-top: 50px;
   align-items: center;
 }
 .todo-container {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
-}
-
-.todo {
-  width: 70%;
-  margin: 3rem auto 0 auto;
 }
 
 .header {
@@ -67,4 +74,11 @@ input {
 
 .todo-content {
   margin-top: 2rem;
+  overflow: scroll;
+  height: calc(100vh - 305px);
+}
+
+.backdrop {
+  background-color: rgba(43, 43, 43, 0.5);
+  z-index: 999;
 }

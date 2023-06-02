@@ -11,9 +11,9 @@ const ContentCover = ({ executeScroll }) => {
                     3 minutes read
                 </div>
                 Dongeng, Anak-Anak, Masa Depan (Mitigasi Bencana)
-                <div className="headerContent">
+                {/* <div className="headerContent">
                     oleh Angela
-                </div>
+                </div> */}
 
                 <button className="headerButtonContainer" onClick={executeScroll}>
                     Read Full Article
