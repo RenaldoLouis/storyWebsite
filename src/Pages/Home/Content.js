@@ -21,6 +21,8 @@ const Content = () => {
     const [viewdatas, setViewDatas] = useState([]);
     const [isViewComment, setIsViewComment] = useState(false);
 
+    const [isReplying, setIsReplying] = useState(false);
+
     const {setIsComment, setReplyToId, setReplyToName} = useContext(DataContext)
 
 
@@ -39,6 +41,11 @@ const Content = () => {
 
     const handleAddComment = async (e) => {
         e.preventDefault();
+
+        if (name === "" || comment === "") {
+            toast.error("Please fill the field!")
+            return;
+        }
 
         try {
             await addDoc(collection(db, "comments"), {
@@ -59,6 +66,7 @@ const Content = () => {
         setReplyToId(userId)
         setReplyToName(userName)
         setIsComment(isCommentNumber)
+        setIsReplying(true)
     }
 
     const executeScroll = () => contentRef.current.scrollIntoView()
@@ -142,6 +150,8 @@ const Content = () => {
                 handleAddComment={handleAddComment}
                 handleClickReply={handleClickReply}
                 isViewComment={isViewComment}
+                setIsReplying={setIsReplying}
+                isReplying={isReplying}
             />
         </div>
     )

@@ -63,6 +63,52 @@
 }
 
 .straightLine{
-  border-left: 6px solid green;
+  border-left: 3px solid rgba(102, 102, 102, 0.1);
   height: 50px;
+  margin-right: 16px;
+}
+
+.commentContent{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.replyButton{
+  background: transparent !important;
+  border: none !important;
+}
+
+.replyText{
+  color: #739AFF;
+  font-family: 'Inter'; 
+  font-weight: 500; 
+  font-size: 16px;
+}
+
+.commentName{
+  font-weight: 700;
+  font-family: 'Inter'; 
+  font-size: 16px;
+  color: #2B2B2B  ;
+}
+
+.commentDateCreated{
+  font-weight: 400;
+  font-family: 'Inter'; 
+  font-size: 16px;
+  color: #666666  ;
+}
+
+.cancelButton{
+  display: flex;
+  justify-content: center;
+  width: 139px;
+  height: 51px;
+  background: transparent;
+  border-radius: 100px;
+
 }
