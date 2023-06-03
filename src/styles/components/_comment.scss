@@ -6,6 +6,7 @@
   width: 600px;
   z-index: 1000;
   transition: all 0.35s ease-out;
+  // padding: 52px 42px 0px 42px;
 }
 .commentContainerHide {
   position: fixed;
@@ -16,4 +17,12 @@
   right: -600px;
   z-index: 1000;
   transition: all 0.35s ease-out;
+  // padding: 52px 42px 0px 42px;
+}
+
+.commentHeader {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  padding-top: 52px;
+  padding-left: 42px;
 }

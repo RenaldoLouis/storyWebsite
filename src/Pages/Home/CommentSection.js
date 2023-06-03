@@ -7,29 +7,29 @@ const CommentSection = (props) => {
         <div className={isViewComment ? "commentContainer" : "commentContainerHide"}>
             <section className="todo-container">
                 <div>
-                    <h1 className="header">
+                    <h1 className="commentHeader">
                         Comments
                     </h1>
 
-                    <div>
+                    <div style={{ padding: "0px 42px 0px 42px" }}>
 
                         <div>
                             <form>
-                                <label style={{ display: "grid" }}>
+                                <label>
                                     Enter your name:
                                     <input
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        style={{ width: "200px" }}
+                                        style={{ width: "100%" }}
                                     />
                                 </label>
-                                <label style={{ display: "grid" }}>
+                                <label>
                                     Enter your Comment:
                                     <textarea
                                         value={comment}
                                         onChange={(e) => setComment(e.target.value)}
-                                        style={{ width: "50vw" }}
+                                        style={{ width: "100%" }}
                                     />
                                 </label>
                             </form>

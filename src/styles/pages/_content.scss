@@ -46,12 +46,6 @@
   align-items: center;
 }
 
-.header {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
 input {
   padding: 10px 3px;
   width: 100%;
@@ -76,6 +70,9 @@ input {
   margin-top: 2rem;
   overflow: scroll;
   height: calc(100vh - 305px);
+  padding-left: 42px;
+  padding-right: 42px;
+  padding-bottom: 100px;
 }
 
 .backdrop {

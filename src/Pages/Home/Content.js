@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
-import homeCard from "../../assets/images/spiderman.jpg"
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from '../../firebase';
 import data from "../../data/content.json"
