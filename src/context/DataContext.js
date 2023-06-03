@@ -13,6 +13,7 @@ export const DataContextProvider = (props) => {
     const [supportsPWA, setSupportsPWA] = useState(false);
     const [showInstallMessage, setShowInstallMessage] = useState(false);
     const [replyToId, setReplyToId] = useState(null);
+    const [replyToName, setReplyToName] = useState(null);
     const [isComment, setIsComment] = useState(null);
 
     const getPWADisplayMode = () => {
@@ -84,6 +85,8 @@ export const DataContextProvider = (props) => {
         downloadApp,
         replyToId,
         setReplyToId,
+        replyToName,
+        setReplyToName,
         isComment,
         setIsComment
     }

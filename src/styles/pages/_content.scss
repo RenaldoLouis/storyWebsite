@@ -40,22 +40,10 @@
   margin-top: 50px;
   align-items: center;
 }
-.todo-container {
-  display: flex;
-  // justify-content: center;
-  align-items: center;
-}
 
 input {
   padding: 10px 3px;
   width: 100%;
-}
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
 }
 
 .btn {
@@ -64,15 +52,6 @@ input {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.todo-content {
-  margin-top: 2rem;
-  overflow: scroll;
-  height: calc(100vh - 305px);
-  padding-left: 42px;
-  padding-right: 42px;
-  padding-bottom: 100px;
 }
 
 .backdrop {

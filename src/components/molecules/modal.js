@@ -6,10 +6,11 @@ import {DataContext} from "../../context/DataContext";
 import moment from 'moment'
 
 
-const Modal = () => {
+const Modal = (props) => {
 
-    const {isComment, replyToId} = useContext(DataContext)
+    const {isComment, replyToId, replyToName} = useContext(DataContext)
 
+    const {fetchPost} = props
 
     const [name, setName] = useState("");
     const [comment, setComment] = useState("");
@@ -22,9 +23,11 @@ const Modal = () => {
                 comment,
                 isComment: isComment + 1,
                 replyToId,
+                replyToName,
                 date: moment().format()
             });
             toast.success("Wow so easy!")
+            fetchPost()
         } catch (e) {
             console.error("Error adding document: ", e);
         }

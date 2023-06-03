@@ -1,15 +1,15 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import { db } from '../../firebase';
+import React, {useEffect, useState, useContext, useRef} from "react";
+import {collection, addDoc, getDocs} from "firebase/firestore";
+import {db} from '../../firebase';
 import data from "../../data/content.json"
-import { toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 import Modal from "../../components/molecules/modal";
-import { DataContext } from "../../context/DataContext";
+import {DataContext} from "../../context/DataContext";
 import moment from 'moment'
 import ContentCover from "./ContentCover";
 import CommentSection from "./CommentSection";
-import { BsShareFill } from "react-icons/bs";
-import { MdOutlineComment } from "react-icons/md";
+import {BsShareFill} from "react-icons/bs";
+import {MdOutlineComment} from "react-icons/md";
 
 
 const Content = () => {
@@ -21,14 +21,14 @@ const Content = () => {
     const [viewdatas, setViewDatas] = useState([]);
     const [isViewComment, setIsViewComment] = useState(false);
 
-    const { setIsComment, setReplyToId } = useContext(DataContext)
+    const {setIsComment, setReplyToId, setReplyToName} = useContext(DataContext)
 
 
     const fetchPost = async () => {
         await getDocs(collection(db, "comments"))
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs
-                    .map((doc) => ({ ...doc.data(), id: doc.id }));
+                    .map((doc) => ({...doc.data(), id: doc.id}));
                 setDatas(newData);
             })
     }
@@ -48,14 +48,16 @@ const Content = () => {
                 date: moment().format()
             });
             toast.success("Wow so easy!")
+            fetchPost();
         } catch (e) {
             console.error("Error adding document: ", e);
         }
     }
 
 
-    const handleClickReply = (userId, isCommentNumber) => {
+    const handleClickReply = (userName, userId, isCommentNumber) => {
         setReplyToId(userId)
+        setReplyToName(userName)
         setIsComment(isCommentNumber)
     }
 
@@ -91,18 +93,18 @@ const Content = () => {
     }
 
     return (
-        <div style={{ position: "relative" }}>
+        <div style={{position: "relative"}}>
             {isViewComment && (
                 <div className="backdrop" onClick={handleCloseComment} />
             )}
-            <Modal />
+            <Modal fetchPost={fetchPost} />
             <ContentCover executeScroll={executeScroll} />
             <div ref={contentRef} class="container col-lg-8 col-10 pt-5 mb-5">
                 <div>
                     {data.paragraph1}
                 </div>
 
-                <video style={{ width: "50vw" }} controls width="100%">
+                <video style={{width: "50vw"}} controls width="100%">
                     <source src="/video1.mp4" type="video/mp4"
                     />
                     Sorry, your browser doesn't support videos.
@@ -113,19 +115,19 @@ const Content = () => {
                     Your browser does not support the audio element.
                 </audio>
 
-                <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
+                <div style={{borderTopStyle: "dashed", marginTop: 77, marginBottom: 64}} />
 
-                <div style={{ display: "flex" }}>
+                <div style={{display: "flex"}}>
                     <button className="commentButtonContainer" onClick={handleShowComment}>
-                        <MdOutlineComment style={{ width: 16, height: 16, marginRight: 8 }} />
+                        <MdOutlineComment style={{width: 16, height: 16, marginRight: 8}} />
                         Comments
-                        <div style={{ borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35 }}>
+                        <div style={{borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35}}>
                             {viewdatas.length}
                         </div>
                     </button>
 
-                    <button className="commentButtonContainer" onClick={executeScroll} style={{ marginLeft: 25 }}>
-                        <BsShareFill style={{ width: 16, height: 16, marginRight: 8 }} />
+                    <button className="commentButtonContainer" onClick={executeScroll} style={{marginLeft: 25}}>
+                        <BsShareFill style={{width: 16, height: 16, marginRight: 8}} />
                         Share
                     </button>
                 </div>
