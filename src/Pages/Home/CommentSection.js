@@ -1,16 +1,47 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import moment from 'moment'
 import {DataContext} from "../../context/DataContext";
+import {toast} from 'react-toastify';
+import {collection, addDoc, getDocs} from "firebase/firestore";
+import {db} from '../../firebase';
 
 
 const CommentSection = (props) => {
-    const {replyToId, setReplyToId} = useContext(DataContext)
+    const {replyToId, setReplyToId, isComment, replyToName} = useContext(DataContext)
 
-    const {name, setName, comment, setComment, viewdatas, handleAddComment, handleClickReply, isViewComment, isReplying} = props;
+    const {name, setName, comment, setComment, viewdatas, handleAddComment, handleClickReply, isViewComment, isReplying, fetchPost} = props;
 
+    const [nameReply, setNameReply] = useState("")
+    const [commentReply, setCommentReply] = useState("")
 
     const handleCancelReplying = () => {
         setReplyToId(null)
+        setNameReply("")
+        setCommentReply("")
+    }
+
+    const handleReply = async (e) => {
+        e.preventDefault();
+
+        if (nameReply === "" || commentReply === "") {
+            toast.error("Please fill the field!")
+            return;
+        }
+
+        try {
+            await addDoc(collection(db, "comments"), {
+                nameReply,
+                commentReply,
+                isComment: isComment + 1,
+                replyToId,
+                replyToName,
+                date: moment().format()
+            });
+            toast.success("Comment Replied!")
+            fetchPost()
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
     }
 
     return (
@@ -85,15 +116,15 @@ const CommentSection = (props) => {
                                                     <input
                                                         className={`${"form-control"} ${"InputContainer"}`}
                                                         type="text"
-                                                        value={name}
-                                                        onChange={(e) => setName(e.target.value)}
+                                                        value={nameReply}
+                                                        onChange={(e) => setNameReply(e.target.value)}
                                                         placeholder="Enter Your Name"
                                                         style={{width: 339}}
                                                     />
                                                     <textarea
                                                         className={`${"form-control"} ${"InputContainer"}`}
-                                                        value={comment}
-                                                        onChange={(e) => setComment(e.target.value)}
+                                                        value={commentReply}
+                                                        onChange={(e) => setCommentReply(e.target.value)}
                                                         placeholder="Enter your Comment"
                                                         style={{width: "100%"}}
                                                     />
@@ -104,7 +135,7 @@ const CommentSection = (props) => {
                                                         <button
                                                             type="submit"
                                                             className="btn"
-                                                            onClick={handleAddComment}
+                                                            onClick={handleReply}
                                                         >
                                                             <div style={{color: "white"}}>
                                                                 Comment

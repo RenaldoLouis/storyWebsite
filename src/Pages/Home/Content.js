@@ -54,7 +54,7 @@ const Content = () => {
                 isComment: 0,
                 date: moment().format()
             });
-            toast.success("Wow so easy!")
+            toast.success("Thank you for your input!")
             fetchPost();
         } catch (e) {
             console.error("Error adding document: ", e);
@@ -152,6 +152,7 @@ const Content = () => {
                 isViewComment={isViewComment}
                 setIsReplying={setIsReplying}
                 isReplying={isReplying}
+                fetchPost={fetchPost}
             />
         </div>
     )
