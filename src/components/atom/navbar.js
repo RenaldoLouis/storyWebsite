@@ -1,16 +1,18 @@
 import React from "react";
 import angLogo from '../../assets/images/ANG-Logo.png';
 
+import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
 
+    const navigate = useNavigate();
     return (
         <nav className="navbar">
             <div className="">
-                <img className="navbar-logo" src={angLogo} alt="ang" ></img>
+                <img className="navbar-logo" src={angLogo} alt="ang" onClick={() => navigate('/home')} />
             </div>
 
-            <ul class="nav nav-pills">
+            {/* <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Active</a>
                 </li>
@@ -30,8 +32,8 @@ const Navbar = () => {
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
-            </ul>
-        </nav>
+            </ul> */}
+        </nav >
     )
 
 }
