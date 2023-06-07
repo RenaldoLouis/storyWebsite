@@ -10,11 +10,13 @@ import {
 } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
 import Home from "./Pages/Home/Home";
+import ContentCover from "./Pages/Home/ContentCover";
 
 const Main = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/home" element={<ContentCover />} />
+      <Route path="/article" element={<Home />} />
       <Route path="*" element={<PublicRoute />} />
     </Routes>
   );

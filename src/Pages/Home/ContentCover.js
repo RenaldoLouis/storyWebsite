@@ -1,11 +1,13 @@
 import React from "react";
-import { FaChevronDown } from "react-icons/fa";
+import {FaChevronDown} from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
 
 
-const ContentCover = ({ executeScroll }) => {
+const ContentCover = ({executeScroll}) => {
+    const navigate = useNavigate();
 
     return (
-        <div style={{ position: "relative" }}>
+        <div style={{position: "relative"}}>
             <div className="headerContainer" >
                 <div className="headerContent">
                     3 minutes read
@@ -15,9 +17,9 @@ const ContentCover = ({ executeScroll }) => {
                     oleh Angela
                 </div> */}
 
-                <button className="headerButtonContainer" onClick={executeScroll}>
+                <button className="headerButtonContainer" onClick={() => navigate('/article')}>
                     Read Full Article
-                    <FaChevronDown style={{ color: "#ffffff", marginLeft: 8 }} />
+                    <FaChevronDown style={{color: "#ffffff", marginLeft: 8}} />
                 </button>
             </div>
             <div className="home-coverImage" />

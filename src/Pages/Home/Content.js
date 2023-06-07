@@ -106,7 +106,7 @@ const Content = () => {
                 <div className="backdrop" onClick={handleCloseComment} />
             )}
             <Modal fetchPost={fetchPost} />
-            <ContentCover executeScroll={executeScroll} />
+            {/* <ContentCover executeScroll={executeScroll} /> */}
             <div ref={contentRef} class="container col-lg-8 col-10 pt-5 mb-5">
                 <div>
                     {data.paragraph1}
