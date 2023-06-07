@@ -9,7 +9,7 @@ const ContentCover = ({executeScroll}) => {
     return (
         <div style={{position: "relative"}}>
             <div className="headerContainer" >
-                <img src="/logoRawat.png" alt="icon" className="iconCover" />
+                <img src="/logoRawat1.png" alt="icon" className="iconCover" />
 
                 <div className="headerContent">
                     3 minutes read
