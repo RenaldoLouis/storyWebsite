@@ -11,6 +11,7 @@ import {
 import PublicRoute from "./PublicRoute";
 import Home from "./Pages/Home/Home";
 import ContentCover from "./Pages/Home/ContentCover";
+import {motion, AnimatePresence} from 'framer-motion';
 
 const Main = () => {
   return (
@@ -27,17 +28,19 @@ function App() {
     <div>
       <DataContextProvider>
         <Router>
-          <ToastContainer
-            autoClose={3000}
-            hideProgressBar={true}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnHover={false}
-            pauseOnFocusLoss={false}
-            position="bottom-left"
-          />
-          <Main />
+          <AnimatePresence mode='wait'>
+            <ToastContainer
+              autoClose={3000}
+              hideProgressBar={true}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnHover={false}
+              pauseOnFocusLoss={false}
+              position="bottom-left"
+            />
+            <Main />
+          </AnimatePresence>
         </Router>
       </DataContextProvider>
     </div>
