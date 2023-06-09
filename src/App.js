@@ -18,7 +18,7 @@ const Main = () => {
     <Routes>
       <Route path="/home" element={<ContentCover />} />
       <Route path="/article" element={<Home />} />
-      <Route path="*" element={<PublicRoute />} />
+      <Route path="/*" element={<PublicRoute />} />
     </Routes>
   );
 };
@@ -27,7 +27,7 @@ function App() {
   return (
     <div>
       <DataContextProvider>
-        <Router>
+        <Router basename="/">
           <AnimatePresence mode='wait'>
             <ToastContainer
               autoClose={3000}
