@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import {collection, addDoc, getDocs} from "firebase/firestore";
+import {collection, addDoc} from "firebase/firestore";
 import {db} from '../../firebase';
 import {toast} from 'react-toastify';
 import {DataContext} from "../../context/DataContext";

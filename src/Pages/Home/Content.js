@@ -6,7 +6,6 @@ import {toast} from 'react-toastify';
 import Modal from "../../components/molecules/modal";
 import {DataContext} from "../../context/DataContext";
 import moment from 'moment'
-import ContentCover from "./ContentCover";
 import CommentSection from "./CommentSection";
 import {BsShareFill} from "react-icons/bs";
 import {MdOutlineComment} from "react-icons/md";
@@ -108,9 +107,13 @@ const Content = () => {
             <Modal fetchPost={fetchPost} />
             {/* <ContentCover executeScroll={executeScroll} /> */}
             <div ref={contentRef} class="container col-lg-8 col-10 pt-5 mb-5">
-                <div>
-                    {data.paragraph1}
-                </div>
+                {Object.keys(data).map((mappedData) => {
+                    return (
+                        <div style={{margin: "16px 0px"}}>
+                            {data[mappedData]}
+                        </div>
+                    )
+                })}
 
                 <video style={{width: "50vw"}} controls width="100%">
                     <source src="/video1.mp4" type="video/mp4"

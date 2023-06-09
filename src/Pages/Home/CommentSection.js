@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import moment from 'moment'
 import {DataContext} from "../../context/DataContext";
 import {toast} from 'react-toastify';
-import {collection, addDoc, getDocs} from "firebase/firestore";
+import {collection, addDoc} from "firebase/firestore";
 import {db} from '../../firebase';
 
 
