@@ -156,6 +156,7 @@ const Content = () => {
                 setIsReplying={setIsReplying}
                 isReplying={isReplying}
                 fetchPost={fetchPost}
+                handleCloseComment={handleCloseComment}
             />
         </div>
     )

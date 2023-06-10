@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="">
-                <img className="navbar-logo" src={angLogo} alt="ang" onClick={() => navigate('/home')} />
+                <img className="navbar-logo" src="/logoRawat1.png" alt="rawatKulit" onClick={() => navigate('/home')} />
             </div>
 
             {/* <ul class="nav nav-pills">

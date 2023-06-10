@@ -9,7 +9,7 @@ import {db} from '../../firebase';
 const CommentSection = (props) => {
     const {replyToId, setReplyToId, isComment, replyToName} = useContext(DataContext)
 
-    const {name, setName, comment, setComment, viewdatas, handleAddComment, handleClickReply, isViewComment, isReplying, fetchPost} = props;
+    const {name, setName, comment, setComment, viewdatas, handleAddComment, handleClickReply, isViewComment, isReplying, fetchPost, handleCloseComment} = props;
 
     const [nameReply, setNameReply] = useState("")
     const [commentReply, setCommentReply] = useState("")
@@ -72,16 +72,30 @@ const CommentSection = (props) => {
                             />
                         </div>
 
-                        <div className="submitButton">
-                            <button
-                                type="submit"
-                                className="btn"
-                                onClick={handleAddComment}
-                            >
-                                <div style={{color: "white"}}>
-                                    Comment
-                                </div>
-                            </button>
+                        <div style={{display: "flex"}}>
+                            <div className="submitButton">
+                                <button
+                                    type="submit"
+                                    className="btn"
+                                    onClick={handleAddComment}
+                                >
+                                    <div style={{color: "white"}}>
+                                        Comment
+                                    </div>
+                                </button>
+                            </div>
+
+                            <div className="cancelButton">
+                                <button
+                                    type="submit"
+                                    className="btn"
+                                    onClick={handleCloseComment}
+                                >
+                                    <div style={{color: "black"}}>
+                                        Cancel
+                                    </div>
+                                </button>
+                            </div>
                         </div>
 
                     </div>
@@ -125,7 +139,7 @@ const CommentSection = (props) => {
                                                         className={`${"form-control"} ${"InputContainer"}`}
                                                         value={commentReply}
                                                         onChange={(e) => setCommentReply(e.target.value)}
-                                                        placeholder="Enter your Comment"
+                                                        placeholder="Enter your Reply"
                                                         style={{width: "100%"}}
                                                     />
                                                 </div>
@@ -138,7 +152,7 @@ const CommentSection = (props) => {
                                                             onClick={handleReply}
                                                         >
                                                             <div style={{color: "white"}}>
-                                                                Comment
+                                                                Reply
                                                             </div>
                                                         </button>
                                                     </div>
