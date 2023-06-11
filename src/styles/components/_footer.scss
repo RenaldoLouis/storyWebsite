@@ -17,3 +17,9 @@
   color: white;
   padding: 42px 3vh 42px 3vh;
 }
+
+@media only screen and (max-width: 425px) {
+  .emptyFooter {
+    display: none;
+  }
+}

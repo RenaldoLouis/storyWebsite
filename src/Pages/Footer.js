@@ -17,7 +17,7 @@ const Footer = () => {
                             Copyright © 2023 All Rights Reserved
                         </div>
                     </div>
-                    <div class="col" >
+                    <div class="col emptyFooter" >
                         {/* <div className="headerText-footer">
                             Tentang
                         </div>
