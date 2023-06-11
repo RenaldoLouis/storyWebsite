@@ -16,6 +16,7 @@ import data3 from "../../data/content3.json"
 import data4 from "../../data/content4.json"
 import data5 from "../../data/content5.json"
 import ContentCover from "./ContentCover";
+import ShareSection from "./ShareSection";
 
 
 const Content = () => {
@@ -28,6 +29,8 @@ const Content = () => {
     const [isViewComment, setIsViewComment] = useState(false);
 
     const [isReplying, setIsReplying] = useState(false);
+
+    const [isViewShare, setIsViewShare] = useState(false);
 
     const { setIsComment, setReplyToId, setReplyToName } = useContext(DataContext)
 
@@ -106,10 +109,22 @@ const Content = () => {
         setIsViewComment(false);
     }
 
+    const handleShowShare = () => {
+        setIsViewShare(true)
+    }
+
+    const handleCloseShare = () => {
+
+        setIsViewShare(false)
+    }
+
     return (
         <div style={{ position: "relative" }}>
             {isViewComment && (
                 <div className="backdrop" onClick={handleCloseComment} />
+            )}
+            {isViewShare && (
+                <div className="backdrop" onClick={handleCloseShare} />
             )}
             <Modal fetchPost={fetchPost} />
             <ContentCover executeScroll={executeScroll} />
@@ -207,7 +222,7 @@ const Content = () => {
                         </div>
                     </button>
 
-                    <button className="commentButtonContainer" onClick={executeScroll} style={{ marginLeft: 25 }}>
+                    <button className="commentButtonContainer" onClick={handleShowShare} style={{ marginLeft: 25 }}>
                         <BsShareFill style={{ width: 16, height: 16, marginRight: 8 }} />
                         Share
                     </button>
@@ -227,6 +242,11 @@ const Content = () => {
                 isReplying={isReplying}
                 fetchPost={fetchPost}
                 handleCloseComment={handleCloseComment}
+            />
+
+            <ShareSection
+                isViewShare={isViewShare}
+                handleCloseShare={handleCloseShare}
             />
         </div>
     )
