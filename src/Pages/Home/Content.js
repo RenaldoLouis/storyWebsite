@@ -148,7 +148,7 @@ const Content = () => {
 
                 <img src="/twitter.jpeg" alt="icon" className="imageContent" />
                 <div className="captionImage">
-                    Salah satu cuitan di Twitter yang . Sumber: Twitter
+                    Salah satu cuitan di Twitter terkait penggunaan skincare untuk laki-laki. (Sumber: Twitter)
                 </div>
 
                 {Object.keys(data2).map((mappedData) => {
@@ -163,6 +163,9 @@ const Content = () => {
                     <source src="/audio1.mp3" type="audio/mpeg" />
                     Your browser does not support the audio element.
                 </audio>
+                <div className="captionImage">
+                    Stereotip menurut Ahli Psikolog Wiwit Puspitasari Dewi, M.Psi.
+                </div>
 
                 <div className="headerSection">
                     Tren Merawat Kulit
@@ -223,7 +226,7 @@ const Content = () => {
 
                 <img src="/picture4.png" alt="icon" className="infographicContent" style={{ marginTop: 16 }} />
                 <div className="captionImage">
-                    Masalah kulit yang dapat dialami bila lalai merawat kulit. Dok. Pribadi
+                    Masalah kulit yang dapat dialami bila lalai merawat kulit. (Dok. Pribadi)
                 </div>
 
                 <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
