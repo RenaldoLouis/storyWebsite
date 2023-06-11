@@ -1,14 +1,21 @@
-import React, {useEffect, useState, useContext, useRef} from "react";
-import {collection, addDoc, getDocs} from "firebase/firestore";
-import {db} from '../../firebase';
-import data from "../../data/content.json"
-import {toast} from 'react-toastify';
+import React, { useEffect, useState, useContext, useRef } from "react";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { db } from '../../firebase';
+import { toast } from 'react-toastify';
 import Modal from "../../components/molecules/modal";
-import {DataContext} from "../../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 import moment from 'moment'
 import CommentSection from "./CommentSection";
-import {BsShareFill} from "react-icons/bs";
-import {MdOutlineComment} from "react-icons/md";
+import { BsShareFill } from "react-icons/bs";
+import { MdOutlineComment } from "react-icons/md";
+
+
+import data from "../../data/content.json"
+import data2 from "../../data/content2.json"
+import data3 from "../../data/content3.json"
+import data4 from "../../data/content4.json"
+import data5 from "../../data/content5.json"
+import ContentCover from "./ContentCover";
 
 
 const Content = () => {
@@ -22,14 +29,14 @@ const Content = () => {
 
     const [isReplying, setIsReplying] = useState(false);
 
-    const {setIsComment, setReplyToId, setReplyToName} = useContext(DataContext)
+    const { setIsComment, setReplyToId, setReplyToName } = useContext(DataContext)
 
 
     const fetchPost = async () => {
         await getDocs(collection(db, "comments"))
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs
-                    .map((doc) => ({...doc.data(), id: doc.id}));
+                    .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setDatas(newData);
             })
     }
@@ -100,45 +107,108 @@ const Content = () => {
     }
 
     return (
-        <div style={{position: "relative"}}>
+        <div style={{ position: "relative" }}>
             {isViewComment && (
                 <div className="backdrop" onClick={handleCloseComment} />
             )}
             <Modal fetchPost={fetchPost} />
-            {/* <ContentCover executeScroll={executeScroll} /> */}
+            <ContentCover executeScroll={executeScroll} />
             <div ref={contentRef} class="container col-lg-8 col-10 pt-5 mb-5">
+                <div className="contentText">
+                    "Kamu ni kayak cewek aja pake skincare"
+                </div>
+                <div className="familyInter" style={{ marginBottom: 16, fontSize: 24, fontWeight: 400 }}>
+                    "Ngapain skincare-an lemah kulitmu"
+                </div>
+                <div className="familyInter" style={{ fontSize: 24, fontWeight: 400 }}>
+                    "Gak usah aneh-aneh kamu tu cowok"
+                </div>
                 {Object.keys(data).map((mappedData) => {
                     return (
-                        <div style={{margin: "16px 0px"}}>
+                        <div className="contentText">
                             {data[mappedData]}
                         </div>
                     )
                 })}
 
-                <video style={{width: "50vw"}} controls width="100%">
+                <img src="/twitter.jpeg" alt="icon" className="imageContent" />
+
+                {Object.keys(data2).map((mappedData) => {
+                    return (
+                        <div className="contentText">
+                            {data2[mappedData]}
+                        </div>
+                    )
+                })}
+
+                <audio controls className="imageContent">
+                    <source src="/audio1.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+
+                <div className="headerSection">
+                    Tren Merawat Kulit
+                </div>
+
+                <img src="/picture1.jpg" alt="icon" className="imageContent" />
+
+                {Object.keys(data3).map((mappedData) => {
+                    return (
+                        <div className="contentText">
+                            {data3[mappedData]}
+                        </div>
+                    )
+                })}
+
+                <div className="headerSection">
+                    Pengaruh Toxic Masculinity
+                </div>
+
+                <img src="/picture2.jpg" alt="icon" className="imageContent" />
+
+                {Object.keys(data4).map((mappedData) => {
+                    return (
+                        <div className="contentText">
+                            {data4[mappedData]}
+                        </div>
+                    )
+                })}
+
+                <div className="headerSection">
+                    Pentingnya Merawat Kulit
+                </div>
+
+                <img src="/picture3.jpg" alt="icon" className="imageContent" />
+
+                {Object.keys(data5).map((mappedData) => {
+                    return (
+                        <div className="contentText">
+                            {data5[mappedData]}
+                        </div>
+                    )
+                })}
+
+                <video style={{ width: "100%" }} controls className="imageContent">
                     <source src="/video1.mp4" type="video/mp4"
                     />
                     Sorry, your browser doesn't support videos.
                 </video>
 
-                <audio controls>
-                    <source src="/audio1.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                </audio>
+                <img src="/picture4.png" alt="icon" className="infographicContent" style={{ marginTop: 16 }} />
 
-                <div style={{borderTopStyle: "dashed", marginTop: 77, marginBottom: 64}} />
+                <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
 
-                <div style={{display: "flex"}}>
+                <div style={{ display: "flex" }}>
                     <button className="commentButtonContainer" onClick={handleShowComment}>
-                        <MdOutlineComment style={{width: 16, height: 16, marginRight: 8}} />
+                        <MdOutlineComment style={{ width: 16, height: 16, marginRight: 8 }} />
                         Comments
-                        <div style={{borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35}}>
+                        <div style={{ borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35 }}>
                             {viewdatas.length}
                         </div>
                     </button>
 
-                    <button className="commentButtonContainer" onClick={executeScroll} style={{marginLeft: 25}}>
-                        <BsShareFill style={{width: 16, height: 16, marginRight: 8}} />
+                    <button className="commentButtonContainer" onClick={executeScroll} style={{ marginLeft: 25 }}>
+                        <BsShareFill style={{ width: 16, height: 16, marginRight: 8 }} />
                         Share
                     </button>
                 </div>
