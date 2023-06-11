@@ -37,7 +37,7 @@ const ContentCover = ({ executeScroll }) => {
 
                     <button className="headerButtonContainer" onClick={location.pathname === "/article" ? executeScroll : handleNavigateToArticle}>
                         {location.pathname === "/article" ? "Start Reading" : "Read Article"}
-                        <FaChevronDown style={{ color: "#ffffff", marginLeft: 8 }} />
+                        <FaChevronDown style={{ color: "#ffffff", marginLeft: 8, display: location.pathname === "/article" ? "" : "none" }} />
                     </button>
                 </div>
                 <div className="home-coverImage" />
