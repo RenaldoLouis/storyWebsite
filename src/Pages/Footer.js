@@ -8,7 +8,7 @@ const Footer = () => {
                 <div class="row">
                     <div class="col">
                         <div className="headerText-footer" >
-                            Article title Here
+                            Rawat Kulit
                         </div>
                         <div className="normalText" style={{ marginBottom: 24 }}>
                             Article Title merupakan tugas akhir penulis sebagai mahasiswa Jurnalistik di Universitas Multimedia Nusantara.

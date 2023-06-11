@@ -1,31 +1,41 @@
 @media (min-width: 900px) {
-    .mx-w-50 {
-      max-width: 50% !important;
-    }
+  .mx-w-50 {
+    max-width: 50% !important;
   }
+}
 
-  .cardShadow{
-    box-shadow: $shadowBackground;
-  }
+.cardShadow {
+  box-shadow: $shadowBackground;
+}
 
- .home {
+.home {
   width: 100%;
   height: 100vh;
   &-coverImage {
-     /* The image used */
-      background-image: url('../../assets/images/coverAngela.jpg');
-      width: 100%;
+    /* The image used */
+    background-image: url("../../assets/images/coverAngela.jpg");
+    width: 100%;
 
-      /* Full height */
-      min-height: 100vh;
+    /* Full height */
+    min-height: 100vh;
 
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-.carousel-heigth{
+}
+.carousel-heigth {
   height: 100%;
+}
+
+.TitleCover {
+  font-size: 70px;
+}
+
+@media only screen and (max-width: 425px) {
+  .TitleCover {
+    font-size: 0.8em;
+  }
 }

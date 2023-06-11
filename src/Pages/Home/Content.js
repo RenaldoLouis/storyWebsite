@@ -147,6 +147,9 @@ const Content = () => {
                 })}
 
                 <img src="/twitter.jpeg" alt="icon" className="imageContent" />
+                <div className="captionImage">
+                    Salah satu cuitan di Twitter yang . Sumber: Twitter
+                </div>
 
                 {Object.keys(data2).map((mappedData) => {
                     return (
@@ -166,6 +169,9 @@ const Content = () => {
                 </div>
 
                 <img src="/picture1.jpg" alt="icon" className="imageContent" />
+                <div className="captionImage">
+                    Potret seorang perempuan sedang menggunakan produk perawatan kulit. (Dok. Pribadi)
+                </div>
 
                 {Object.keys(data3).map((mappedData) => {
                     return (
@@ -180,6 +186,9 @@ const Content = () => {
                 </div>
 
                 <img src="/picture2.jpg" alt="icon" className="imageContent" />
+                <div className="captionImage">
+                    Potret seorang laki-laki yang menggunakan kapas untuk membersihkan wajah. (Dok. Pribadi)
+                </div>
 
                 {Object.keys(data4).map((mappedData) => {
                     return (
@@ -194,6 +203,9 @@ const Content = () => {
                 </div>
 
                 <img src="/picture3.jpg" alt="icon" className="imageContent" />
+                <div className="captionImage">
+                    Masker menjadi salah satu produk untuk merawat kulit. (Dok. Pribadi)
+                </div>
 
                 {Object.keys(data5).map((mappedData) => {
                     return (
@@ -210,6 +222,9 @@ const Content = () => {
                 </video>
 
                 <img src="/picture4.png" alt="icon" className="infographicContent" style={{ marginTop: 16 }} />
+                <div className="captionImage">
+                    Masalah kulit yang dapat dialami bila lalai merawat kulit. Dok. Pribadi
+                </div>
 
                 <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
 

@@ -28,7 +28,7 @@ const ContentCover = ({ executeScroll }) => {
                     {/* <div className="headerContent">
                         3 minutes read
                     </div> */}
-                    <div style={{ fontSize: 70 }}>
+                    <div className="TitleCover" >
                         Genderless Beauty: Kesehatan Kulit Tidak Memandang Gender
                     </div>
                     {/* <div className="headerContent">

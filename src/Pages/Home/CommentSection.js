@@ -1,15 +1,15 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import moment from 'moment'
-import {DataContext} from "../../context/DataContext";
-import {toast} from 'react-toastify';
-import {collection, addDoc} from "firebase/firestore";
-import {db} from '../../firebase';
+import { DataContext } from "../../context/DataContext";
+import { toast } from 'react-toastify';
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../../firebase';
 
 
 const CommentSection = (props) => {
-    const {replyToId, setReplyToId, isComment, replyToName} = useContext(DataContext)
+    const { replyToId, setReplyToId, isComment, replyToName } = useContext(DataContext)
 
-    const {name, setName, comment, setComment, viewdatas, handleAddComment, handleClickReply, isViewComment, isReplying, fetchPost, handleCloseComment} = props;
+    const { name, setName, comment, setComment, viewdatas, handleAddComment, handleClickReply, isViewComment, isReplying, fetchPost, handleCloseComment, setIsReplying } = props;
 
     const [nameReply, setNameReply] = useState("")
     const [commentReply, setCommentReply] = useState("")
@@ -30,7 +30,7 @@ const CommentSection = (props) => {
 
         try {
             await addDoc(collection(db, "comments"), {
-                nameReply,
+                name: nameReply,
                 commentReply,
                 isComment: isComment + 1,
                 replyToId,
@@ -39,6 +39,7 @@ const CommentSection = (props) => {
             });
             toast.success("Comment Replied!")
             fetchPost()
+            setIsReplying(false);
         } catch (e) {
             console.error("Error adding document: ", e);
         }
@@ -52,7 +53,7 @@ const CommentSection = (props) => {
                         Comments
                     </h1>
 
-                    <div style={{padding: "0px 42px 0px 42px"}}>
+                    <div style={{ padding: "0px 42px 0px 42px" }}>
 
                         <div>
                             <input
@@ -61,25 +62,25 @@ const CommentSection = (props) => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="Enter Your Name"
-                                style={{width: 339}}
+                                style={{ width: 339 }}
                             />
                             <textarea
                                 className={`${"form-control"} ${"InputContainer"}`}
                                 value={comment}
                                 onChange={(e) => setComment(e.target.value)}
                                 placeholder="Enter your Comment"
-                                style={{width: "100%"}}
+                                style={{ width: "100%" }}
                             />
                         </div>
 
-                        <div style={{display: "flex"}}>
+                        <div style={{ display: "flex" }}>
                             <div className="submitButton">
                                 <button
                                     type="submit"
                                     className="btn"
                                     onClick={handleAddComment}
                                 >
-                                    <div style={{color: "white"}}>
+                                    <div style={{ color: "white" }}>
                                         Comment
                                     </div>
                                 </button>
@@ -91,7 +92,7 @@ const CommentSection = (props) => {
                                     className="btn"
                                     onClick={handleCloseComment}
                                 >
-                                    <div style={{color: "black"}}>
+                                    <div style={{ color: "black" }}>
                                         Cancel
                                     </div>
                                 </button>
@@ -107,12 +108,12 @@ const CommentSection = (props) => {
                     viewdatas?.map((data, i) => (
                         data.map((data2, i) => {
                             return (
-                                <div style={{display: "flex", marginLeft: 25 * data2.isComment, marginBottom: 8}}>
+                                <div style={{ display: "flex", marginLeft: 25 * data2.isComment, marginBottom: 8 }}>
                                     {data2.isComment > 0 && (
                                         <div className="straightLine" />
                                     )}
                                     <div>
-                                        <div style={{display: "flex", alignItems: "center"}}>
+                                        <div style={{ display: "flex", alignItems: "center" }}>
                                             <div key={i} className="commentName">
                                                 {data2.name}
                                             </div>
@@ -133,25 +134,25 @@ const CommentSection = (props) => {
                                                         value={nameReply}
                                                         onChange={(e) => setNameReply(e.target.value)}
                                                         placeholder="Enter Your Name"
-                                                        style={{width: 339}}
+                                                        style={{ width: 339 }}
                                                     />
                                                     <textarea
                                                         className={`${"form-control"} ${"InputContainer"}`}
                                                         value={commentReply}
                                                         onChange={(e) => setCommentReply(e.target.value)}
                                                         placeholder="Enter your Reply"
-                                                        style={{width: "100%"}}
+                                                        style={{ width: "100%" }}
                                                     />
                                                 </div>
 
-                                                <div style={{display: "flex"}}>
+                                                <div style={{ display: "flex" }}>
                                                     <div className="submitButton">
                                                         <button
                                                             type="submit"
                                                             className="btn"
                                                             onClick={handleReply}
                                                         >
-                                                            <div style={{color: "white"}}>
+                                                            <div style={{ color: "white" }}>
                                                                 Reply
                                                             </div>
                                                         </button>
@@ -162,7 +163,7 @@ const CommentSection = (props) => {
                                                             className="btn"
                                                             onClick={handleCancelReplying}
                                                         >
-                                                            <div style={{color: "black"}}>
+                                                            <div style={{ color: "black" }}>
                                                                 Cancel
                                                             </div>
                                                         </button>
