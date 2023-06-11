@@ -28,7 +28,7 @@ const ShareSection = (props) => {
                             <input
                                 className={`${"form-control"} ${"InputContainer"}`}
                                 type="text"
-                                value="RawatKulit.id"
+                                value="rawatkulit.id"
                                 disabled={true}
                                 placeholder="Enter Your Name"
                                 style={{ width: 339 }}
@@ -43,7 +43,7 @@ const ShareSection = (props) => {
                                     onClick={handleClickShare}
                                 >
                                     <div style={{ color: "white" }}>
-                                        Share
+                                        Copy Link
                                     </div>
                                 </button>
                             </div>
