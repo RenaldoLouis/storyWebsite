@@ -31,7 +31,7 @@ const CommentSection = (props) => {
         try {
             await addDoc(collection(db, "comments"), {
                 name: nameReply,
-                commentReply,
+                comment: commentReply,
                 isComment: isComment + 1,
                 replyToId,
                 replyToName,
