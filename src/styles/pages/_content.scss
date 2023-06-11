@@ -40,6 +40,16 @@
   margin-top: 50px;
   align-items: center;
 }
+.commentButtonOuterContainer {
+  display: flex;
+}
+
+@media only screen and (max-width: 425px) {
+  .commentButtonOuterContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 input {
   padding: 10px 3px;

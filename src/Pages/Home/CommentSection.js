@@ -108,7 +108,7 @@ const CommentSection = (props) => {
                     viewdatas?.map((data, i) => (
                         data.map((data2, i) => {
                             return (
-                                <div style={{ display: "flex", marginLeft: 25 * data2.isComment, marginBottom: 8 }}>
+                                <div style={{ display: "flex", marginLeft: 25 * data2.isComment, marginBottom: 8, marginTop: 8 }}>
                                     {data2.isComment > 0 && (
                                         <div className="straightLine" />
                                     )}

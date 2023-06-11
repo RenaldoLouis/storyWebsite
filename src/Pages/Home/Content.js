@@ -228,7 +228,7 @@ const Content = () => {
 
                 <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
 
-                <div style={{ display: "flex" }}>
+                <div className="commentButtonOuterContainer" >
                     <button className="commentButtonContainer" onClick={handleShowComment}>
                         <MdOutlineComment style={{ width: 16, height: 16, marginRight: 8 }} />
                         Comments

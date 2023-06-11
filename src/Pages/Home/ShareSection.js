@@ -1,16 +1,12 @@
 import React, { useContext, useState } from "react";
-import moment from 'moment'
-import { DataContext } from "../../context/DataContext";
 import { toast } from 'react-toastify';
-import { collection, addDoc } from "firebase/firestore";
-import { db } from '../../firebase';
 
 const ShareSection = (props) => {
 
     const { isViewShare, handleCloseShare } = props;
 
     const handleClickShare = () => {
-        navigator.clipboard.writeText("RawatKulit.id")
+        navigator.clipboard.writeText("rawatkulit.id")
         toast.success("Copied to clipboard!")
     }
 

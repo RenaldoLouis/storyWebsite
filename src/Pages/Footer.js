@@ -11,15 +11,14 @@ const Footer = () => {
                             Rawat Kulit
                         </div>
                         <div className="normalText" style={{ marginBottom: 24 }}>
-                            Article Title merupakan tugas akhir penulis sebagai mahasiswa Jurnalistik di Universitas Multimedia Nusantara.
+                            Rawat Kulit merupakan sebuah karya jurnalistik berbasis website yang dibuat untuk memenuhi tugas akhir di Universitas Multimedia Nusantara. Karya ini dibuat dan diproduksi oleh Angela Marici dengan bimbingan dari Anton Wisnu Nugroho, S.S., M.Si.
                         </div>
-
                         <div className="normalText">
-                            Copyright © 2022 All Rights Reserved
+                            Copyright © 2023 All Rights Reserved
                         </div>
                     </div>
                     <div class="col" >
-                        <div className="headerText-footer">
+                        {/* <div className="headerText-footer">
                             Tentang
                         </div>
                         <div className="normalText" style={{ marginBottom: 24 }}>
@@ -27,8 +26,8 @@ const Footer = () => {
                             dengan supervisi Yearry Panji Setianto.
                         </div>
                         <div className="normalText">
-                            Copyright © 2022 All Rights Reserved
-                        </div>
+                            Copyright © 2023 All Rights Reserved
+                        </div> */}
                     </div>
                 </div>
             </div>
