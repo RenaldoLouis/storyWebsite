@@ -164,7 +164,7 @@ const Content = () => {
                     Your browser does not support the audio element.
                 </audio>
                 <div className="captionImage">
-                    Stereotip menurut Ahli Psikolog Wiwit Puspitasari Dewi, M.Psi.
+                    Stereotipe menurut Ahli Psikolog Wiwit Puspitasari Dewi, M.Psi.
                 </div>
 
                 <div className="headerSection">
