@@ -2,12 +2,11 @@ import http from '../services/http';
 
 const handleErrors = (err /* path  payload */) => {
   const errorMessageKey = err.response?.data?.error.Message
-  return { error: errorMessageKey }
+  return {error: errorMessageKey}
 }
 
 const getRequest = async (path, payload) => {
   try {
-    console.log("path", path)
     const res = await http.get(path, payload)
     return res;
   } catch (err) {

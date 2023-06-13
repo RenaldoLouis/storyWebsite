@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../../components/atom/navbar";
-import Content from "./Content";
 import Footer from "../Footer";
 import {motion} from "framer-motion";
+import Content from "../Content/Content";
 
 const Home = () => {
     return (
