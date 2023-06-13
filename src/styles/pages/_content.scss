@@ -111,32 +111,32 @@ input {
   font-size: 12px;
 }
 
-.centerContentFlex{
+.centerContentFlex {
   display: flex;
   justify-content: center;
 }
 
-.audioContainer{ 
+.audioContainer {
   border: 1px solid black;
   padding: 50px;
   margin: 25px 0px 50px;
   position: relative;
-  
 }
 
-.audioImage{
+.audioImage {
   position: absolute;
-  background: black;
+  background: white;
   top: 3%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  width: 50px;
-  height: 50px;
+  width: 73px;
+  height: 56px;
   z-index: 5;
+  border-radius: 30px;
 }
-.audioImageWhiteSpace{
+.audioImageWhiteSpace {
   position: absolute;
-  background: white;
+  background: rgb(249, 249, 249);
   top: 3%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
