@@ -29,7 +29,7 @@ const OpeningContent = (props) => {
                     )
                 })}
 
-                <img src="/twitter.jpeg" alt="icon" className="imageContent" />
+                <img ref={(el) => imageRef.current[1] = el} src="/twitter.jpeg" alt="icon" className="imageContent" />
                 <div className="captionImage">
                     Salah satu cuitan di Twitter terkait penggunaan skincare untuk laki-laki. (Sumber: Twitter)
                 </div>
@@ -42,7 +42,7 @@ const OpeningContent = (props) => {
                             </div>
                             {mappedData === "paragraph3" && (
                                 <>
-                                    <div className="audioContainer">
+                                    <div ref={(el) => imageRef.current[7] = el} className="audioContainer">
                                         <img className="audioImage" src="/audioImage2.jpg" alt="rawatKulit" />
                                         <div className="audioImageWhiteSpace" />
                                         <audio controls className="imageContent">

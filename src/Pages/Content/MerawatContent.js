@@ -6,7 +6,7 @@ const MerawatContent = (props) => {
 
     return (
         <div style={{background: "#765B48"}}>
-            <div ref={(el) => imageRef.current[4] = el} class="container col-lg-6 col-8 pt-5 pb-5">
+            <div ref={(el) => imageRef.current[5] = el} class="container col-lg-6 col-8 pt-5 pb-5">
                 <div className="headerSection" style={{color: "white"}}>
                     Pentingnya Merawat Kulit
                 </div>
@@ -23,7 +23,7 @@ const MerawatContent = (props) => {
                                 {data5[mappedData]}
                             </div>
                             {mappedData === "paragraph7" && (
-                                <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+                                <div ref={(el) => imageRef.current[9] = el} id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <img class="d-block w-100" src="carousel1.png" alt="First slide" />

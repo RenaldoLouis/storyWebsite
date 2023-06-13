@@ -201,7 +201,7 @@ const Content = () => {
                     Sorry, your browser doesn't support videos.
                 </video>
 
-                <img ref={(el) => imageRef1.current[5] = el} src="/picture4.png" alt="icon" className="infographicContent" style={{marginTop: 16}} />
+                <img ref={(el) => imageRef1.current[6] = el} src="/picture4.png" alt="icon" className="infographicContent" style={{marginTop: 16}} />
                 <div className="captionImage">
                     Masalah kulit yang dapat dialami bila lalai merawat kulit. (Dok. Pribadi)
                 </div>

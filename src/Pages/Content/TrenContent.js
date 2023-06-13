@@ -5,7 +5,7 @@ const TrenContent = (props) => {
     const {data3, imageRef} = props
     return (
         <div style={{background: "#FFF3EF"}}>
-            <div ref={(el) => imageRef.current[1] = el} class="container col-lg-6 col-8 pt-5 pb-5">
+            <div ref={(el) => imageRef.current[2] = el} class="container col-lg-6 col-8 pt-5 pb-5">
                 <div className="headerSection">
                     Tren Merawat Kulit
                 </div>
@@ -23,7 +23,7 @@ const TrenContent = (props) => {
                             </div>
                             {mappedData === "paragraph3" && (
                                 <>
-                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div ref={(el) => imageRef.current[8] = el} id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <img class="d-block w-100" src="type1.png" alt="First slide" />
