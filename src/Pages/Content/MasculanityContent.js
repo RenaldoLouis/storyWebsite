@@ -1,4 +1,5 @@
 import React from "react";
+import quotesImage from "../../assets/images/wiwitQuote.png"
 
 const MasculanityContent = (props) => {
     const {data4, imageRef} = props
@@ -30,7 +31,7 @@ const MasculanityContent = (props) => {
                             )}
 
                             {mappedData === "paragraph5" && (
-                                <img ref={(el) => imageRef.current[4] = el} src="/wiwitQuote.png" alt="icon" className="imageContent" />
+                                <img ref={(el) => imageRef.current[4] = el} src={quotesImage} alt="icon" className="imageContent" />
 
                             )}
                         </>
