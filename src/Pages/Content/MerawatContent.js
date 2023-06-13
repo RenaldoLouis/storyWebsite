@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const MerawatContent = (props) => {
-    const {data5} = props
+    const { data5, imageRef } = props
+
+
     return (
-        <div style={{background: "#765B48"}}>
+        <div style={{ background: "#765B48" }}>
             <div class="container col-lg-6 col-8 pt-5 pb-5">
                 <div className="headerSection">
                     Pentingnya Merawat Kulit
                 </div>
 
-                <img src="/picture3.jpg" alt="icon" className="imageContent" />
+                <img ref={(el) => imageRef.current[3] = el} src="/picture3.jpg" alt="icon" className="imageContent" />
                 <div className="captionImage">
                     Masker menjadi salah satu produk untuk merawat kulit. (Dok. Pribadi)
                 </div>
