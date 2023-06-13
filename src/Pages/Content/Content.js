@@ -40,11 +40,6 @@ const Content = () => {
 
 
     const imageRef1 = useRef([]);
-    const imageRef2 = useRef(null);
-    const imageRef3 = useRef(null);
-    const imageRef4 = useRef(null);
-    const imageRef5 = useRef(null);
-
 
     const fetchPost = async () => {
         await getDocs(collection(db, "comments"))
@@ -89,7 +84,9 @@ const Content = () => {
         setIsReplying(true)
     }
 
-    const executeScroll = () => contentRef.current.scrollIntoView()
+    const executeScroll = () => {
+        imageRef1.current[0].scrollIntoView()
+    }
 
 
     useEffect(() => {
@@ -136,7 +133,7 @@ const Content = () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate__animated');
-                        entry.target.classList.add('animate__bounceInRight');
+                        entry.target.classList.add('animate__fadeInUp');
 
                     } else {
                         // entry.target.classList.remove('animate__animated');

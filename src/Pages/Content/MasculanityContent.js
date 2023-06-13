@@ -4,12 +4,12 @@ const MasculanityContent = (props) => {
     const {data4, imageRef} = props
     return (
         <div style={{background: "#C2AEA6"}}>
-            <div class="container col-lg-6 col-8 pt-5 pb-5">
+            <div ref={(el) => imageRef.current[2] = el} class="container col-lg-6 col-8 pt-5 pb-5">
                 <div className="headerSection">
                     Pengaruh Toxic Masculinity
                 </div>
 
-                <img ref={(el) => imageRef.current[2] = el} src="/picture2.jpg" alt="icon" className="imageContent" />
+                <img src="/picture2.jpg" alt="icon" className="imageContent" />
                 <div className="captionImage">
                     Potret seorang laki-laki yang menggunakan kapas untuk membersihkan wajah. (Dok. Pribadi)
                 </div>
