@@ -1,9 +1,9 @@
 import React from "react";
 
 const MasculanityContent = (props) => {
-    const { data4, imageRef } = props
+    const {data4, imageRef} = props
     return (
-        <div style={{ background: "#C2AEA6" }}>
+        <div style={{background: "#C2AEA6"}}>
             <div class="container col-lg-6 col-8 pt-5 pb-5">
                 <div className="headerSection">
                     Pengaruh Toxic Masculinity
@@ -21,7 +21,7 @@ const MasculanityContent = (props) => {
                                 {data4[mappedData]}
                             </div>
                             {mappedData === "paragraph5" && (
-                                <img ref={(el) => imageRef.current[2] = el} src="/wiwitQuote.png" alt="icon" className="imageContent" />
+                                <img ref={(el) => imageRef.current[3] = el} src="/wiwitQuote.png" alt="icon" className="imageContent" />
 
                             )}
                         </>
