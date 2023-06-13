@@ -19,9 +19,18 @@ const MerawatContent = (props) => {
                 {Object.keys(data5).map((mappedData) => {
                     return (
                         <>
-                            <div className="contentText" style={{color: "white"}}>
-                                {data5[mappedData]}
-                            </div>
+                            {mappedData === "paragraph4" ? (
+                                <div className="contentText" style={{color: "white"}}>
+                                    <em>
+                                        {data5[mappedData]}
+                                    </em>
+                                </div>
+                            ) : (
+                                <div className="contentText" style={{color: "white"}}>
+                                    {data5[mappedData]}
+                                </div>
+                            )}
+
                             {mappedData === "paragraph7" && (
                                 <div ref={(el) => imageRef.current[9] = el} id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">

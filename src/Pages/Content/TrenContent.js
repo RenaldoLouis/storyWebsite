@@ -18,9 +18,18 @@ const TrenContent = (props) => {
                 {Object.keys(data3).map((mappedData) => {
                     return (
                         <>
-                            <div className="contentText">
-                                {data3[mappedData]}
-                            </div>
+                            {mappedData === "paragraph3" ? (
+                                <div className="contentText">
+                                    <em>
+                                        {data3[mappedData]}
+                                    </em>
+                                </div>
+                            ) : (
+                                <div className="contentText">
+                                    {data3[mappedData]}
+                                </div>
+                            )}
+
                             {mappedData === "paragraph3" && (
                                 <>
                                     <div ref={(el) => imageRef.current[8] = el} id="carouselExampleControls" class="carousel slide" data-ride="carousel">

@@ -17,9 +17,18 @@ const MasculanityContent = (props) => {
                 {Object.keys(data4).map((mappedData) => {
                     return (
                         <>
-                            <div className="contentText">
-                                {data4[mappedData]}
-                            </div>
+                            {mappedData === "paragraph2" || mappedData === "paragraph4" || mappedData === "paragraph8" ? (
+                                <div className="contentText">
+                                    <em>
+                                        {data4[mappedData]}
+                                    </em>
+                                </div>
+                            ) : (
+                                <div className="contentText">
+                                    {data4[mappedData]}
+                                </div>
+                            )}
+
                             {mappedData === "paragraph5" && (
                                 <img ref={(el) => imageRef.current[4] = el} src="/wiwitQuote.png" alt="icon" className="imageContent" />
 
