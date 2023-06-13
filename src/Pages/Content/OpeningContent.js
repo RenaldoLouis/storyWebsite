@@ -18,10 +18,14 @@ const OpeningContent = (props) => {
                     "Gak usah aneh-aneh kamu tu cowok"
                 </div>
                 {Object.keys(data).map((mappedData) => {
+
                     return (
-                        <div className="contentText">
-                            {data[mappedData]}
-                        </div>
+                        <>
+                            <div className="contentText">
+                                {data[mappedData]}
+                            </div>
+
+                        </>
                     )
                 })}
 
@@ -32,23 +36,30 @@ const OpeningContent = (props) => {
 
                 {Object.keys(data2).map((mappedData) => {
                     return (
-                        <div className="contentText">
-                            {data2[mappedData]}
-                        </div>
+                        <>
+                            <div className="contentText">
+                                {data2[mappedData]}
+                            </div>
+                            {mappedData === "paragraph3" && (
+                                <>
+                                    <div className="audioContainer">
+                                        <img className="audioImage" src="/audioImage.png" alt="rawatKulit" />
+                                        <div className="audioImageWhiteSpace" />
+                                        <audio controls className="imageContent">
+                                            <source src="/audio1.mp3" type="audio/mpeg" />
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                        <div className="captionImage">
+                                            Stereotipe menurut Ahli Psikolog Wiwit Puspitasari Dewi, M.Psi.
+                                        </div>
+                                    </div>
+                                </>
+                            )}
+                        </>
                     )
                 })}
 
-                <div className="audioContainer">
-                    <img className="audioImage" src="/audioImage.png" alt="rawatKulit" />
-                    <div className="audioImageWhiteSpace" />
-                    <audio controls className="imageContent">
-                        <source src="/audio1.mp3" type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div className="captionImage">
-                        Stereotipe menurut Ahli Psikolog Wiwit Puspitasari Dewi, M.Psi.
-                    </div>
-                </div>
+
             </div>
         </div>
     )

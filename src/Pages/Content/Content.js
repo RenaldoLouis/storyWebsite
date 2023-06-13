@@ -197,16 +197,18 @@ const Content = () => {
             />
 
             <div class="container col-lg-6 col-8 pt-5 mb-5">
-                <video style={{ width: "100%" }} controls className="imageContent">
-                    <source src="/video1.mp4" type="video/mp4"
-                    />
-                    Sorry, your browser doesn't support videos.
-                </video>
 
                 <img src="/picture4.png" alt="icon" className="infographicContent" style={{ marginTop: 16 }} />
                 <div className="captionImage">
                     Masalah kulit yang dapat dialami bila lalai merawat kulit. (Dok. Pribadi)
                 </div>
+
+
+                <video style={{ width: "100%" }} controls className="imageContent">
+                    <source src="/video1.mp4" type="video/mp4"
+                    />
+                    Sorry, your browser doesn't support videos.
+                </video>
 
                 <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
 
