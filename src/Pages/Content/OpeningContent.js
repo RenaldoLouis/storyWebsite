@@ -1,20 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 
 
 const OpeningContent = (props) => {
-    const { data, data2, contentRef, imageRef } = props
+    const {data, data2, contentRef, imageRef} = props
 
 
     return (
-        <div style={{ background: "#F9F9F9" }}>
+        <div style={{background: "#F9F9F9"}}>
             <div ref={contentRef} class="container col-lg-6 col-8 pt-5 pb-5">
                 <div className="contentText">
                     "Kamu ni kayak cewek aja pake skincare"
                 </div>
-                <div className="familyInter" style={{ marginBottom: 16, fontSize: 16, fontWeight: 400 }}>
+                <div className="familyInter" style={{marginBottom: 16, fontSize: 16, fontWeight: 400}}>
                     "Ngapain skincare-an lemah kulitmu"
                 </div>
-                <div className="familyInter" style={{ fontSize: 16, fontWeight: 400 }}>
+                <div className="familyInter" style={{fontSize: 16, fontWeight: 400}}>
                     "Gak usah aneh-aneh kamu tu cowok"
                 </div>
                 {Object.keys(data).map((mappedData) => {
@@ -43,7 +43,7 @@ const OpeningContent = (props) => {
                             {mappedData === "paragraph3" && (
                                 <>
                                     <div className="audioContainer">
-                                        <img className="audioImage" src="/audioImage.png" alt="rawatKulit" />
+                                        <img className="audioImage" src="/audioImage2.jpg" alt="rawatKulit" />
                                         <div className="audioImageWhiteSpace" />
                                         <audio controls className="imageContent">
                                             <source src="/audio1.mp3" type="audio/mpeg" />
