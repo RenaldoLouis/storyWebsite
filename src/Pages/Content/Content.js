@@ -197,7 +197,7 @@ const Content = () => {
 
             <div class="container col-lg-6 col-8 pt-5 mb-5">
 
-                <div ref={(el) => imageRef1.current[9] = el} style={{width: "100%"}} className="imageContent">
+                <div ref={(el) => imageRef1.current[10] = el} style={{width: "100%"}} className="imageContent">
                     <ReactPlayer
                         url="https://www.youtube.com/watch?v=cJqFtn56b-g&t=3s&ab_channel=JR_AngelaMarici"
                     />

@@ -3,6 +3,7 @@ import React from "react";
 
 const TrenContent = (props) => {
     const {data3, imageRef} = props
+
     return (
         <div style={{background: "#FFF3EF"}}>
             <div ref={(el) => imageRef.current[2] = el} class="container col-lg-6 col-8 pt-5 pb-5">
@@ -15,17 +16,19 @@ const TrenContent = (props) => {
                     Potret seorang perempuan sedang menggunakan produk perawatan kulit. (Dok. Pribadi)
                 </div>
 
-                {Object.keys(data3).map((mappedData) => {
+                {Object.keys(data3).map((mappedData, index) => {
+                    let indexData = index + 25
+
                     return (
                         <>
                             {mappedData === "paragraph3" ? (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     <em>
                                         {data3[mappedData]}
                                     </em>
                                 </div>
                             ) : (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     {data3[mappedData]}
                                 </div>
                             )}

@@ -4,6 +4,7 @@ import React from "react";
 const OpeningContent = (props) => {
     const {data, data2, imageRef} = props
 
+
     return (
         <div style={{background: "#F9F9F9"}}>
             <div ref={(el) => imageRef.current[0] = el} class="container col-lg-6 col-8 pt-5 pb-5 mt-5">
@@ -22,20 +23,24 @@ const OpeningContent = (props) => {
                         "Gak usah aneh-aneh kamu tu cowok"
                     </em>
                 </div>
-                {Object.keys(data).map((mappedData) => {
+                {Object.keys(data).map((mappedData, index) => {
+                    let indexData = index + 11
+
                     return (
                         <>
                             {mappedData === "paragraph3" ? (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     <em>
                                         {data[mappedData]}
                                     </em>
                                 </div>
                             ) : (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     {data[mappedData]}
                                 </div>
-                            )}
+                            )
+
+                            }
 
 
                         </>
@@ -47,17 +52,18 @@ const OpeningContent = (props) => {
                     Salah satu cuitan di Twitter terkait penggunaan skincare untuk laki-laki. (Sumber: Twitter)
                 </div>
 
-                {Object.keys(data2).map((mappedData) => {
+                {Object.keys(data2).map((mappedData, index) => {
+                    let indexData = index + 18
                     return (
                         <>
                             {mappedData === "paragraph3" || mappedData === "paragraph5" || mappedData === "paragraph7" ? (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     <em>
                                         {data2[mappedData]}
                                     </em>
                                 </div>
                             ) : (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     {data2[mappedData]}
                                 </div>
                             )}
@@ -80,7 +86,6 @@ const OpeningContent = (props) => {
                         </>
                     )
                 })}
-
 
             </div>
         </div>

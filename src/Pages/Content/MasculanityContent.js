@@ -3,6 +3,7 @@ import quotesImage from "../../assets/images/wiwitQuote.png"
 
 const MasculanityContent = (props) => {
     const {data4, imageRef} = props
+
     return (
         <div style={{background: "#C2AEA6"}}>
             <div ref={(el) => imageRef.current[3] = el} class="container col-lg-6 col-8 pt-5 pb-5">
@@ -15,17 +16,19 @@ const MasculanityContent = (props) => {
                     Potret seorang laki-laki yang menggunakan kapas untuk membersihkan wajah. (Dok. Pribadi)
                 </div>
 
-                {Object.keys(data4).map((mappedData) => {
+                {Object.keys(data4).map((mappedData, index) => {
+                    let indexData = index + 30
+
                     return (
                         <>
                             {mappedData === "paragraph2" || mappedData === "paragraph4" || mappedData === "paragraph8" ? (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     <em>
                                         {data4[mappedData]}
                                     </em>
                                 </div>
                             ) : (
-                                <div className="contentText">
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     {data4[mappedData]}
                                 </div>
                             )}

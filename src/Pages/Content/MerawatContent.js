@@ -3,7 +3,6 @@ import React, {useEffect, useRef} from "react";
 const MerawatContent = (props) => {
     const {data5, imageRef} = props
 
-
     return (
         <div style={{background: "#765B48"}}>
             <div ref={(el) => imageRef.current[5] = el} class="container col-lg-6 col-8 pt-5 pb-5">
@@ -16,17 +15,18 @@ const MerawatContent = (props) => {
                     Masker menjadi salah satu produk untuk merawat kulit. (Dok. Pribadi)
                 </div>
 
-                {Object.keys(data5).map((mappedData) => {
+                {Object.keys(data5).map((mappedData, index) => {
+                    let indexData = index + 38
                     return (
                         <>
                             {mappedData === "paragraph4" ? (
-                                <div className="contentText" style={{color: "white"}}>
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
                                     <em>
                                         {data5[mappedData]}
                                     </em>
                                 </div>
                             ) : (
-                                <div className="contentText" style={{color: "white"}}>
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
                                     {data5[mappedData]}
                                 </div>
                             )}

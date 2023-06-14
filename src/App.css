@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* This changes all the animations globally */
+:root {
+  --animate-duration: 2000ms;
+  --animate-delay: 1s;
+}
