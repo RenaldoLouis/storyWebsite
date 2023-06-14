@@ -30,9 +30,10 @@ const OpeningContent = (props) => {
                         <>
                             {mappedData === "paragraph3" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em>
-                                        {data[mappedData]}
+                                    <em className="italicSpacing">
+                                        “Dulu sering dibilang hitam kayak orang Timur, terus dibilang gak mirip sama orangtua karna mereka putih,“
                                     </em>
+                                    ujar Delon.
                                 </div>
                             ) : (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
@@ -53,17 +54,34 @@ const OpeningContent = (props) => {
                     let indexData = index + 18
                     return (
                         <>
-                            {mappedData === "paragraph3" || mappedData === "paragraph5" || mappedData === "paragraph7" ? (
+                            {mappedData === "paragraph3" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em>
-                                        {data2[mappedData]}
+                                    <em className="italicSpacing">
+                                        “Tindakan merawat kulit itu dianggap sebagai sesuatu yang tidak maskulin, bisa aja mungkin ga cuman merawat kulit. Contohnya mungkin ada sifat melekat pada laki-laki itu misalnya seperti laki-laki harus kuat tahan banting.”
                                     </em>
+                                    ujarnya.
                                 </div>
-                            ) : (
-                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    {data2[mappedData]}
-                                </div>
-                            )}
+                            ) :
+                                mappedData === "paragraph5" ? (
+                                    <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                        <em className="italicSpacing">
+                                            “Biasa pake basic skincare karena udah cocok dan hasilnya kulit jadi lebih sehat dibandingkan sebelum pake skincare,”
+                                        </em>
+                                        ungkap laki-laki berumur 20 tahun ini.
+                                    </div>
+                                ) :
+                                    mappedData === "paragraph7" ? (
+                                        <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                            <em className="italicSpacing">
+                                                “Saya selalu memberikan edukasi kepada pasien-pasien tentang pentingnya merawat kulit seperti facial rutin, memakai skincare seperti sunscreen dan moisturizer, dan tidak lupa pentingnya minum air yang cukup dan makan makanan sehat.”
+                                            </em>
+                                            katanya.
+                                        </div>
+                                    ) : (
+                                        <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                            {data2[mappedData]}
+                                        </div>
+                                    )}
 
                             {mappedData === "paragraph3" && (
                                 <>

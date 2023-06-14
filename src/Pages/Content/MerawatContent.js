@@ -21,9 +21,10 @@ const MerawatContent = (props) => {
                         <>
                             {mappedData === "paragraph4" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
-                                    <em>
-                                        {data5[mappedData]}
+                                    <em className="italicSpacing">
+                                        “Biasa kalau udah munculnya tebel atau parah begitu juga untuk flek atau keluhan lain dia akan semakin susah untuk diobati. Jadi, perlu lebih banyak lagi treatment yang perlu dijalanin lagi selanjutnya,”
                                     </em>
+                                    ungkap dr. Indri.
                                 </div>
                             ) : (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>

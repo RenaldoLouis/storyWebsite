@@ -23,9 +23,10 @@ const TrenContent = (props) => {
                         <>
                             {mappedData === "paragraph3" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em>
-                                        {data3[mappedData]}
+                                    <em className="italicSpacing">
+                                        “Masalah kulit seperti jerawat, flek tidak hanya terjadi kepada perempuan, malah mayoritas jenis kulit laki-laki lebih thick, berminyak daripada perempuan sehingga lebih sering mengalami masalah jerawat atau komedo jadi ada baiknya jika laki-laki juga merawat kulit wajah,”
                                     </em>
+                                    kata dr. Jay Mithila.
                                 </div>
                             ) : (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">

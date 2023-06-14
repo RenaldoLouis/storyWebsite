@@ -21,11 +21,26 @@ const MasculanityContent = (props) => {
 
                     return (
                         <>
-                            {mappedData === "paragraph2" || mappedData === "paragraph4" || mappedData === "paragraph8" ? (
+                            {mappedData === "paragraph2" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em>
-                                        {data4[mappedData]}
+                                    <em className="italicSpacing">
+                                        “Toxic masculinity saat kita punya aturan yang sangat kaku nih, kaku banget tentang seharusnya laki-laki itu seperti apa gitu. Nah, orang yang sangat kaku maka dia akan sulit pastinya untuk menerima hal-hal yang diluar dari yang seharusnya.”
                                     </em>
+                                    jelas Wiwit.
+                                </div>
+                            ) : mappedData === "paragraph4" ? (
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                    <em className="italicSpacing">
+                                        “Kita bilang istilah sekarang agak rules and trick toxic masculinity sehingga akan lebih sulit buat dia untuk menerima bahwa seorang laki-laki itu ternyata tetap perlu juga loh merawat kulit kayak perempuan,”
+                                    </em>
+                                    tambahnya.
+                                </div>
+                            ) : mappedData === "paragraph8" ? (
+                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                    <em className="italicSpacing">
+                                        “Penggunaan produk perawatan kulit pada laki-laki ini akan terkait juga dengan lingkungan di sekitarnya seperti apa, maka nantinya menurut saya gitu jika semakin banyak informasi atau semakin banyak edukasi gitu bahwa perawatan kulit gapapa dilakukan oleh laki-laki mungkin juga akan menggeser pemahaman seseorang bahwa perawatan kulit itu tidak hanya untuk perempuan gitu,”
+                                    </em>
+                                    tutup Wiwit.
                                 </div>
                             ) : (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
