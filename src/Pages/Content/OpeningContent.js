@@ -2,23 +2,23 @@ import React from "react";
 
 
 const OpeningContent = (props) => {
-    const {data, data2, imageRef} = props
+    const { data, data2, imageRef } = props
 
 
     return (
-        <div style={{background: "#F9F9F9"}}>
+        <div style={{ background: "#F9F9F9" }}>
             <div ref={(el) => imageRef.current[0] = el} class="container col-lg-6 col-8 pt-5 pb-5 mt-5">
                 <div className="contentText">
                     <em>
                         "Kamu ni kayak cewek aja pake skincare"
                     </em>
                 </div>
-                <div className="familyInter" style={{marginBottom: 60, fontSize: 20, fontWeight: 400}}>
+                <div className="familyInter" style={{ marginBottom: 60, fontSize: 20, fontWeight: 400 }}>
                     <em>
                         "Ngapain skincare-an lemah kulitmu"
                     </em>
                 </div>
-                <div className="familyInter" style={{fontSize: 20, fontWeight: 400}}>
+                <div className="familyInter" style={{ fontSize: 20, fontWeight: 400 }}>
                     <em>
                         "Gak usah aneh-aneh kamu tu cowok"
                     </em>
@@ -47,7 +47,11 @@ const OpeningContent = (props) => {
 
                 <img ref={(el) => imageRef.current[1] = el} src="/twitter.jpeg" alt="icon" className="imageContent" />
                 <div className="captionImage">
-                    Salah satu cuitan di Twitter terkait penggunaan skincare untuk laki-laki. (Sumber: Twitter)
+                    Salah satu cuitan di Twitter terkait penggunaan
+                    <em>
+                        skincare
+                    </em>
+                    untuk laki-laki. (Sumber: Twitter)
                 </div>
 
                 {Object.keys(data2).map((mappedData, index) => {
