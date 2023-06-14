@@ -202,7 +202,6 @@ const Content = () => {
                     <ReactPlayer
                         url="https://www.youtube.com/watch?v=cJqFtn56b-g&t=3s&ab_channel=JR_AngelaMarici"
                         className="react-player"
-                        playing
                         width="100%"
                         height="100%"
                         controls={false}
