@@ -124,6 +124,13 @@ input {
   border-radius: 50px;
 }
 
+@media only screen and (max-width: 425px) {
+  .audioContainer {
+    padding: 80px 7px 30px 19px;
+
+  }
+}
+
 .audioImage {
   position: absolute;
   background: white;

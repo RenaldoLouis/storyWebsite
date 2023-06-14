@@ -39,10 +39,7 @@ const OpeningContent = (props) => {
                                     {data[mappedData]}
                                 </div>
                             )
-
                             }
-
-
                         </>
                     )
                 })}
