@@ -1,13 +1,13 @@
-import React, {useEffect, useState, useContext, useRef} from "react";
-import {collection, addDoc, getDocs} from "firebase/firestore";
-import {db} from '../../firebase';
-import {toast} from 'react-toastify';
+import React, { useEffect, useState, useContext, useRef } from "react";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { db } from '../../firebase';
+import { toast } from 'react-toastify';
 import Modal from "../../components/molecules/modal";
-import {DataContext} from "../../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 import moment from 'moment'
 import CommentSection from "../Home/CommentSection";
-import {BsShareFill} from "react-icons/bs";
-import {MdOutlineComment} from "react-icons/md";
+import { BsShareFill } from "react-icons/bs";
+import { MdOutlineComment } from "react-icons/md";
 import YouTube from 'react-youtube';
 import ReactPlayer from "react-player"
 
@@ -38,7 +38,7 @@ const Content = () => {
 
     const [isViewShare, setIsViewShare] = useState(false);
 
-    const {setIsComment, setReplyToId, setReplyToName} = useContext(DataContext)
+    const { setIsComment, setReplyToId, setReplyToName } = useContext(DataContext)
 
 
     const imageRef1 = useRef([]);
@@ -47,7 +47,7 @@ const Content = () => {
         await getDocs(collection(db, "comments"))
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs
-                    .map((doc) => ({...doc.data(), id: doc.id}));
+                    .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setDatas(newData);
             })
     }
@@ -161,7 +161,7 @@ const Content = () => {
     }, []);
 
     return (
-        <div style={{position: "relative"}}>
+        <div style={{ position: "relative" }}>
             {isViewComment && (
                 <div className="backdrop" onClick={handleCloseComment} />
             )}
@@ -197,30 +197,36 @@ const Content = () => {
 
             <div class="container col-lg-6 col-8 pt-5 mb-5">
 
-                <div ref={(el) => imageRef1.current[10] = el} style={{width: "100%"}} className="imageContent">
+
+                <div className="player-wrapper">
                     <ReactPlayer
                         url="https://www.youtube.com/watch?v=cJqFtn56b-g&t=3s&ab_channel=JR_AngelaMarici"
+                        className="react-player"
+                        playing
+                        width="100%"
+                        height="100%"
+                        controls={false}
                     />
                 </div>
 
-                <img ref={(el) => imageRef1.current[6] = el} src="/picture4.png" alt="icon" className="infographicContent" style={{marginTop: 16}} />
+                <img ref={(el) => imageRef1.current[6] = el} src="/picture4.png" alt="icon" className="infographicContent" style={{ marginTop: 16 }} />
                 <div className="captionImage">
                     Masalah kulit yang dapat dialami bila lalai merawat kulit. (Dok. Pribadi)
                 </div>
 
-                <div style={{borderTopStyle: "dashed", marginTop: 77, marginBottom: 64}} />
+                <div style={{ borderTopStyle: "dashed", marginTop: 77, marginBottom: 64 }} />
 
                 <div className="commentButtonOuterContainer" >
                     <button className="commentButtonContainer" onClick={handleShowComment}>
-                        <MdOutlineComment style={{width: 16, height: 16, marginRight: 8}} />
+                        <MdOutlineComment style={{ width: 16, height: 16, marginRight: 8 }} />
                         Comments
-                        <div style={{borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35}}>
+                        <div style={{ borderRadius: 100, background: "rgba(217, 217, 217, 0.5)", paddingTop: 3, marginLeft: 8, width: 35, height: 35 }}>
                             {viewdatas.length}
                         </div>
                     </button>
 
-                    <button className="commentButtonContainer" onClick={handleShowShare} style={{marginLeft: 25}}>
-                        <BsShareFill style={{width: 16, height: 16, marginRight: 8}} />
+                    <button className="commentButtonContainer" onClick={handleShowShare} style={{ marginLeft: 25 }}>
+                        <BsShareFill style={{ width: 16, height: 16, marginRight: 8 }} />
                         Share
                     </button>
                 </div>
