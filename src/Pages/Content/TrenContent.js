@@ -21,18 +21,39 @@ const TrenContent = (props) => {
 
                     return (
                         <>
-                            {mappedData === "paragraph3" ? (
+                            {mappedData === "paragraph1" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                    Selama masa pandemi Covid-19 merawat kulit menjadi tren yang diminati oleh sebagian besar masyarakat, terutama kaum hawa. Berdasarkan survei dari Beauty Trends 2021 yang dilakukan oleh Jakpat menunjukkan bahwa penggunaan
                                     <em className="italicSpacing">
-                                        “Masalah kulit seperti jerawat, flek tidak hanya terjadi kepada perempuan, malah mayoritas jenis kulit laki-laki lebih thick, berminyak daripada perempuan sehingga lebih sering mengalami masalah jerawat atau komedo jadi ada baiknya jika laki-laki juga merawat kulit wajah,”
+                                        skincare
                                     </em>
-                                    kata dr. Jay Mithila.
+                                    di kalangan perempuan sebesar 93 persen, sementara di kalangan laki-laki hanya 46 persen.
                                 </div>
-                            ) : (
-                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    {data3[mappedData]}
-                                </div>
-                            )}
+                            )
+                                :
+                                mappedData === "paragraph3" ? (
+                                    <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                        <em className="italicSpacing">
+                                            “Masalah kulit seperti jerawat, flek tidak hanya terjadi kepada perempuan, malah mayoritas jenis kulit laki-laki lebih thick, berminyak daripada perempuan sehingga lebih sering mengalami masalah jerawat atau komedo jadi ada baiknya jika laki-laki juga merawat kulit wajah,”
+                                        </em>
+                                        kata dr. Jay Mithila.
+                                    </div>
+                                ) :
+                                    mappedData === "paragraph6" ? (
+                                        <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                            Dalam pengamatannya selama menjadi dokter estetika, laki-laki cenderung lebih malu mengunjungi klinik kecantikan untuk sekadar melakukan perawatan kulit dan menggunakan
+                                            <em className="italicSpacing">
+                                                skincare.
+                                            </em>
+                                            Menurutnya hal ini terjadi karena stigma dan stereotipe yang masih melekat pada masyarakat, sehingga membuat mereka merasa malu untuk mulai menjaga kesehatan kulit.
+                                        </div>
+                                    )
+
+                                        : (
+                                            <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
+                                                {data3[mappedData]}
+                                            </div>
+                                        )}
 
                             {mappedData === "paragraph3" && (
                                 <>

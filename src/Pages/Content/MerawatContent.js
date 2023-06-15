@@ -26,11 +26,34 @@ const MerawatContent = (props) => {
                                     </em>
                                     ungkap dr. Indri.
                                 </div>
-                            ) : (
-                                <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
-                                    {data5[mappedData]}
-                                </div>
-                            )}
+                            ) :
+                                mappedData === "paragraph7" ? (
+                                    <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
+                                        Apabila ingin memiliki kulit sehat perlu melakukan berbagai tahapan
+                                        <em className="italicSpacing">
+                                            skincare,
+                                        </em>
+                                        seperti:
+                                    </div>
+                                ) :
+                                    mappedData === "paragraph8" ? (
+                                        <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
+                                            Meski penggunaan
+                                            <em className="italicSpacing">
+                                                skincare
+                                            </em>
+                                            untuk laki-laki di Indonesia masih tergolong sedikit, namun ada beberapa masyarakat yang sudah mulai rutin menggunakan
+                                            <em className="italicSpacing">
+                                                skincare.
+                                            </em>
+                                            Hal ini terjadi karena kesadaran akan pentingnya merawat dan menjaga kesehatan kulit. Kesadaran tersebut harus terus dipertahankan mengingat perawatan kulit bisa menjadi investasi jangka panjang meski hasilnya tidak signifikan, namun manfaatnya akan terasa seiring dengan bertambahnya usia.
+                                        </div>
+                                    ) :
+                                        (
+                                            <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
+                                                {data5[mappedData]}
+                                            </div>
+                                        )}
 
                             {mappedData === "paragraph7" && (
                                 <div ref={(el) => imageRef.current[9] = el} id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
