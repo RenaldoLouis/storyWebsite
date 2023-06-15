@@ -5,7 +5,7 @@ const MerawatContent = (props) => {
 
     return (
         <div style={{background: "#765B48"}}>
-            <div ref={(el) => imageRef.current[5] = el} class="container col-lg-6 col-8 pt-5 pb-5">
+            <div ref={(el) => imageRef.current[5] = el} class="container col-lg-6 col-12 pt-5 pb-5">
                 <div className="headerSection" style={{color: "white"}}>
                     Pentingnya Merawat Kulit
                 </div>

@@ -6,7 +6,7 @@ const TrenContent = (props) => {
 
     return (
         <div style={{background: "#FFF3EF"}}>
-            <div ref={(el) => imageRef.current[2] = el} class="container col-lg-6 col-8 pt-5 pb-5">
+            <div ref={(el) => imageRef.current[2] = el} class="container col-lg-6 col-12 pt-5 pb-5">
                 <div className="headerSection">
                     Tren Merawat Kulit
                 </div>
@@ -23,7 +23,11 @@ const TrenContent = (props) => {
                         <>
                             {mappedData === "paragraph1" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    Selama masa pandemi Covid-19 merawat kulit menjadi tren yang diminati oleh sebagian besar masyarakat, terutama kaum hawa. Berdasarkan survei dari Beauty Trends 2021 yang dilakukan oleh Jakpat menunjukkan bahwa penggunaan
+                                    Selama masa pandemi Covid-19 merawat kulit menjadi tren yang diminati oleh sebagian besar masyarakat, terutama kaum hawa. Berdasarkan survei dari
+                                    <em className="italicSpacing">
+                                        Beauty Trends 2021
+                                    </em>
+                                    yang dilakukan oleh Jakpat menunjukkan bahwa penggunaan
                                     <em className="italicSpacing">
                                         skincare
                                     </em>

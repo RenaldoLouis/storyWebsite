@@ -195,7 +195,7 @@ const Content = () => {
                 imageRef={imageRef1}
             />
 
-            <div class="container  col-lg-6 col-8 pt-5 mb-5">
+            <div class="container col-lg-6 col-12 pt-5 mb-5">
 
 
                 <div className="player-wrapper">
