@@ -24,7 +24,7 @@ const MasculanityContent = (props) => {
                             {mappedData === "paragraph1" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
                                     <em className="italicSpacing">
-                                        “Toxic masculinity
+                                        Toxic masculinity
                                     </em>
                                     adalah salah satu stigma yang sering melekat ketika seorang laki-laki menggunakan produk perawatan kulit. Menurut Wiwit Puspitasari Dewi, M.Psi. selaku ahli psikologi menjelaskan bahwa
                                     <em className="italicSpacing">

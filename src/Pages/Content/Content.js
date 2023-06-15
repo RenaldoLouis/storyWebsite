@@ -26,6 +26,8 @@ import MerawatContent from "./MerawatContent";
 
 
 const Content = () => {
+    const {setIsComment, setReplyToId, setReplyToName} = useContext(DataContext)
+
     const contentRef = useRef(null)
 
     const [name, setName] = useState("");
@@ -38,7 +40,8 @@ const Content = () => {
 
     const [isViewShare, setIsViewShare] = useState(false);
 
-    const {setIsComment, setReplyToId, setReplyToName} = useContext(DataContext)
+
+    const [isLoading, setIsloading] = useState(false)
 
 
     const imageRef1 = useRef([]);
@@ -57,6 +60,7 @@ const Content = () => {
     }, [])
 
     const handleAddComment = async (e) => {
+        setIsloading(true)
         e.preventDefault();
 
         if (name === "" || comment === "") {
@@ -76,6 +80,8 @@ const Content = () => {
         } catch (e) {
             console.error("Error adding document: ", e);
         }
+
+        setIsloading(false)
     }
 
 
@@ -244,6 +250,7 @@ const Content = () => {
                 isReplying={isReplying}
                 fetchPost={fetchPost}
                 handleCloseComment={handleCloseComment}
+                isLoading={isLoading}
             />
 
             <ShareSection
