@@ -21,7 +21,7 @@ const MerawatContent = (props) => {
                         <>
                             {mappedData === "paragraph4" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText" style={{color: "white"}}>
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         “Biasa kalau udah munculnya tebel atau parah begitu juga untuk flek atau keluhan lain dia akan semakin susah untuk diobati. Jadi, perlu lebih banyak lagi treatment yang perlu dijalanin lagi selanjutnya,”
                                     </em>
                                     ungkap dr. Indri.
@@ -74,11 +74,11 @@ const MerawatContent = (props) => {
                                             <img class="d-block w-100" src="carousel5.png" alt="Third slide" />
                                         </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                                    <a class="carousel-control-prev2" href="#carouselExampleControls2" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                                    <a class="carousel-control-next2" href="#carouselExampleControls2" role="button" data-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>

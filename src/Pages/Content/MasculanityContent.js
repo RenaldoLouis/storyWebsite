@@ -23,7 +23,7 @@ const MasculanityContent = (props) => {
                         <>
                             {mappedData === "paragraph1" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         Toxic masculinity
                                     </em>
                                     adalah salah satu stigma yang sering melekat ketika seorang laki-laki menggunakan produk perawatan kulit. Menurut Wiwit Puspitasari Dewi, M.Psi. selaku ahli psikologi menjelaskan bahwa
@@ -34,7 +34,7 @@ const MasculanityContent = (props) => {
                                 </div>
                             ) : mappedData === "paragraph2" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         “Toxic masculinity saat kita punya aturan yang sangat kaku nih, kaku banget tentang seharusnya laki-laki itu seperti apa gitu. Nah, orang yang sangat kaku maka dia akan sulit pastinya untuk menerima hal-hal yang diluar dari yang seharusnya.”
                                     </em>
                                     jelas Wiwit.
@@ -51,7 +51,7 @@ const MasculanityContent = (props) => {
 
                             ) : mappedData === "paragraph4" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         “Kita bilang istilah sekarang agak rules and trick toxic masculinity sehingga akan lebih sulit buat dia untuk menerima bahwa seorang laki-laki itu ternyata tetap perlu juga loh merawat kulit kayak perempuan,”
                                     </em>
                                     tambahnya.
@@ -66,7 +66,7 @@ const MasculanityContent = (props) => {
                                 </div>
                             ) : mappedData === "paragraph8" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         “Penggunaan produk perawatan kulit pada laki-laki ini akan terkait juga dengan lingkungan di sekitarnya seperti apa, maka nantinya menurut saya gitu jika semakin banyak informasi atau semakin banyak edukasi gitu bahwa perawatan kulit gapapa dilakukan oleh laki-laki mungkin juga akan menggeser pemahaman seseorang bahwa perawatan kulit itu tidak hanya untuk perempuan gitu,”
                                     </em>
                                     tutup Wiwit.
@@ -78,7 +78,7 @@ const MasculanityContent = (props) => {
                             )}
 
                             {mappedData === "paragraph5" && (
-                                <img ref={(el) => imageRef.current[4] = el} src={quotesImage} alt="icon" className="imageContent" />
+                                <img ref={(el) => imageRef.current[4] = el} src={quotesImage} alt="icon" className="imageContent" style={{width: "100%"}} />
 
                             )}
                         </>

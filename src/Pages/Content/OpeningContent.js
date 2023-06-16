@@ -30,7 +30,7 @@ const OpeningContent = (props) => {
                         <>
                             {mappedData === "paragraph3" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         “Dulu sering dibilang hitam kayak orang Timur, terus dibilang gak mirip sama orangtua karna mereka putih,“
                                     </em>
                                     ujar Delon.
@@ -60,7 +60,7 @@ const OpeningContent = (props) => {
                         <>
                             {mappedData === "paragraph3" ? (
                                 <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                    <em className="italicSpacing">
+                                    <em className="italicSpacingStart">
                                         “Tindakan merawat kulit itu dianggap sebagai sesuatu yang tidak maskulin, bisa aja mungkin ga cuman merawat kulit. Contohnya mungkin ada sifat melekat pada laki-laki itu misalnya seperti laki-laki harus kuat tahan banting.”
                                     </em>
                                     ujarnya.
@@ -68,7 +68,7 @@ const OpeningContent = (props) => {
                             ) :
                                 mappedData === "paragraph5" ? (
                                     <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                        <em className="italicSpacing">
+                                        <em className="italicSpacingStart">
                                             “Biasa pake basic skincare karena udah cocok dan hasilnya kulit jadi lebih sehat dibandingkan sebelum pake skincare,”
                                         </em>
                                         ungkap laki-laki berumur 20 tahun ini.
@@ -76,7 +76,7 @@ const OpeningContent = (props) => {
                                 ) :
                                     mappedData === "paragraph7" ? (
                                         <div ref={(el) => imageRef.current[indexData] = el} className="contentText">
-                                            <em className="italicSpacing">
+                                            <em className="italicSpacingStart">
                                                 “Saya selalu memberikan edukasi kepada pasien-pasien tentang pentingnya merawat kulit seperti facial rutin, memakai skincare seperti sunscreen dan moisturizer, dan tidak lupa pentingnya minum air yang cukup dan makan makanan sehat.”
                                             </em>
                                             katanya.
