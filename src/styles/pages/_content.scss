@@ -101,6 +101,10 @@ input {
   line-height: 1.8;
 }
 
+.contentTextSize {
+  font-size: 20px;
+}
+
 @media only screen and (max-width: 425px) {
   .contentText {
     // font-family: "Inter";
@@ -109,6 +113,12 @@ input {
     font-weight: 400;
     line-height: 1.8;
   }
+
+  
+  .contentTextSize {
+    font-size: 16px;
+  }
+
 }
 
 .familyInter {

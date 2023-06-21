@@ -13,12 +13,12 @@ const OpeningContent = (props) => {
                         "Kamu ni kayak cewek aja pake skincare"
                     </em>
                 </div>
-                <div className="familyInter" style={{marginBottom: 60, fontSize: 20, fontWeight: 400}}>
+                <div className="contentTextSize" style={{marginBottom: 60, fontWeight: 400}}>
                     <em>
                         "Ngapain skincare-an lemah kulitmu"
                     </em>
                 </div>
-                <div className="familyInter" style={{fontSize: 20, fontWeight: 400}}>
+                <div className="contentTextSize" style={{fontWeight: 400}}>
                     <em>
                         "Gak usah aneh-aneh kamu tu cowok"
                     </em>
