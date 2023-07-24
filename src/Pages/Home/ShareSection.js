@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { toast } from 'react-toastify';
 
 const ShareSection = (props) => {
 
-    const { isViewShare, handleCloseShare } = props;
+    const { isViewShare } = props;
 
     const handleClickShare = () => {
         navigator.clipboard.writeText("rawatkulit.id")

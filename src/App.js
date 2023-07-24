@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import {DataContextProvider} from "./context/DataContext";
-import {ToastContainer} from "react-toastify";
+import { DataContextProvider } from "./context/DataContext";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
@@ -11,7 +11,7 @@ import {
 import PublicRoute from "./PublicRoute";
 import Home from "./Pages/Home/Home";
 import ContentCover from "./Pages/Home/ContentCover";
-import {motion, AnimatePresence} from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import 'animate.css';
 
 const Main = () => {

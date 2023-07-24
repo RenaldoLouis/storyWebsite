@@ -1,7 +1,6 @@
 import React from "react";
-import angLogo from '../../assets/images/ANG-Logo.png';
 
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
